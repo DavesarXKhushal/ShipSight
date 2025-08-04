@@ -267,9 +267,9 @@ p {
 }
 
 .logo-image {
-  height: 28px;
+  height: 20px;
   width: auto;
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
   transition: var(--transition);
   object-fit: contain;
 }
@@ -280,8 +280,8 @@ p {
 
 /* Footer logo sizing */
 .footer-brand .logo-image {
-  height: 32px;
-  margin-right: 0.75rem;
+  height: 24px;
+  margin-right: 0.5rem;
 }
 
 .nav-links {
