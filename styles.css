@@ -1098,6 +1098,241 @@ p {
   }
 }
 
+/* Page Hero */
+.page-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 120px;
+  background: linear-gradient(135deg, rgba(73, 145, 229, 0.05) 0%, rgba(59, 178, 214, 0.05) 100%);
+}
+
+.page-hero-content h1 {
+  font-size: var(--fluid-32-48);
+  margin-bottom: 1rem;
+}
+
+.page-hero-content p {
+  font-size: var(--fluid-18-20);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Download Cards */
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.download-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.download-card.primary-download {
+  border-color: var(--color-primary-01);
+  box-shadow: var(--shadow-lg);
+}
+
+.download-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.download-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.download-header i {
+  font-size: 3rem;
+  color: var(--color-primary-01);
+  margin-bottom: 1rem;
+}
+
+.download-header h2 {
+  font-size: var(--fluid-20-24);
+  margin-bottom: 0.5rem;
+}
+
+.download-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.file-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--secondary-bg);
+  border-radius: var(--border-radius-sm);
+}
+
+.file-size {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.file-type {
+  color: var(--text-secondary);
+}
+
+.feature-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.feature-list i {
+  color: var(--color-primary-03);
+  font-size: 0.8rem;
+}
+
+.download-btn {
+  width: 100%;
+}
+
+/* Requirements Section */
+.requirements-section {
+  background: var(--secondary-bg);
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.requirement-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.requirement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.req-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.requirement-card h3 {
+  font-size: var(--fluid-18-20);
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.requirement-card ul {
+  list-style: none;
+  text-align: left;
+}
+
+.requirement-card li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.requirement-card li::before {
+  content: '•';
+  color: var(--color-primary-01);
+  position: absolute;
+  left: 0;
+}
+
+/* Installation Steps */
+.install-section {
+  background: var(--card-bg);
+}
+
+.install-steps {
+  display: grid;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.install-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--secondary-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.install-step:hover {
+  border-color: var(--color-primary-01);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  font-size: var(--fluid-18-20);
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.step-content p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
 @media (max-width: 480px) {
   .platforms-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1106,6 +1341,14 @@ p {
   .hero-card {
     width: 100%;
     max-width: 280px;
+  }
+
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .requirements-grid {
+    grid-template-columns: 1fr;
   }
 }
 
