@@ -26,21 +26,37 @@ function initNavigation() {
     });
 }
 
-// Scroll animations
+// Enhanced scroll animations
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Add staggered animation for grid items
+                if (entry.target.parentElement.classList.contains('grid')) {
+                    const siblings = Array.from(entry.target.parentElement.children);
+                    const index = siblings.indexOf(entry.target);
+                    entry.target.style.transitionDelay = `${index * 0.1}s`;
+                }
+
                 entry.target.classList.add('animated');
+
+                // Add special effects for certain elements
+                if (entry.target.classList.contains('hero-content')) {
+                    entry.target.classList.add('float-animation');
+                }
+
+                if (entry.target.classList.contains('btn-primary')) {
+                    entry.target.classList.add('glow-effect');
+                }
             }
         });
     }, observerOptions);
-    
+
     // Observe all elements with animate-on-scroll class
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
