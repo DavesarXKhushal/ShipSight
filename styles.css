@@ -142,35 +142,37 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Typography */
+/* Apple-Style Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", var(--font-family-heading) !important;
+  font-family: var(--font-family-heading);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: var(--space-lg);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
 
 h1 {
   font-size: var(--fluid-48-64);
   font-weight: 700;
-  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray) 100%);
+  background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
 
 h2 {
   font-size: var(--fluid-32-48);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: -0.04em;
 }
 
 h3 {
   font-size: var(--fluid-24-32);
   font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 h4 {
@@ -185,11 +187,32 @@ h5 {
   color: var(--text-primary);
 }
 
+h6 {
+  font-size: var(--fluid-16-18);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 p {
   color: var(--text-secondary);
   margin-bottom: var(--space-lg);
   font-size: var(--fluid-16-18);
   line-height: 1.6;
+  font-weight: 400;
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-alt {
+  background: var(--gradient-text-alt);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Navigation */
