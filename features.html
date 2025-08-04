@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - ShipSight Barcode Video Management System</title>
+    <meta name="description" content="Explore ShipSight's powerful features: barcode-triggered recording, auto order-video linking, universal camera support, and multi-platform compatibility.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .feature-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            margin-top: 80px;
+        }
+        
+        .feature-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+        
+        .feature-detail:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .feature-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .feature-mockup {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .mockup-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .tech-specs {
+            background: var(--secondary-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .spec-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .spec-list li {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .integration-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .integration-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .integration-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-detail {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .feature-detail:nth-child(even) {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-video"></i> ShipSight
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-to-use.html">How It Works</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="feature-hero">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h1>Powerful Features for Complete Shipment Security</h1>
+                <p class="hero-description">
+                    Discover how ShipSight's advanced barcode-linked video management system protects your business from fraudulent returns while streamlining your shipping workflow.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barcode Recording Feature -->
+    <section class="section">
+        <div class="container">
+            <div class="feature-detail animate-on-scroll">
+                <div>
+                    <h2><i class="fas fa-barcode" style="color: var(--accent-blue);"></i> Smart Barcode-Triggered Recording</h2>
+                    <p>Revolutionary barcode scanning technology that instantly triggers video recording when you scan any order barcode. Our intelligent system recognizes all major barcode formats including UPC, EAN, Code 128, and QR codes.</p>
+                    
+                    <div class="tech-specs">
+                        <h4>Technical Specifications</h4>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check"></i> Supports 15+ barcode formats</li>
+                            <li><i class="fas fa-check"></i> 0.2 second scan-to-record time</li>
+                            <li><i class="fas fa-check"></i> 99.9% accuracy rate</li>
+                            <li><i class="fas fa-check"></i> Works with handheld & fixed scanners</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-mockup">
+                    <div class="mockup-content">
+                        <i class="fas fa-barcode" style="font-size: 4rem; color: var(--accent-blue); margin-bottom: 1rem;"></i>
+                        <h3>Instant Scan Recognition</h3>
+                        <p>Scan → Record → Link</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auto-Linking Feature -->
+            <div class="feature-detail animate-on-scroll">
+                <div>
+                    <h2><i class="fas fa-link" style="color: var(--accent-green);"></i> Automatic Order-Video Linking</h2>
+                    <p>Every video is automatically linked to its corresponding tracking ID and order details. No manual data entry required - our system creates perfect associations between your shipments and their video proof.</p>
+                    
+                    <div class="tech-specs">
+                        <h4>Smart Linking Features</h4>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check"></i> Real-time order lookup</li>
+                            <li><i class="fas fa-check"></i> Automatic metadata tagging</li>
+                            <li><i class="fas fa-check"></i> Cloud sync & backup</li>
+                            <li><i class="fas fa-check"></i> Instant search & retrieval</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-mockup">
+                    <div class="mockup-content">
+                        <i class="fas fa-link" style="font-size: 4rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                        <h3>Perfect Association</h3>
+                        <p>Video ↔ Order ↔ Tracking</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Camera Support Feature -->
+            <div class="feature-detail animate-on-scroll">
+                <div>
+                    <h2><i class="fas fa-camera" style="color: var(--accent-purple);"></i> Universal Camera Support</h2>
+                    <p>Works seamlessly with any camera setup - from basic webcams to professional IP cameras and existing CCTV systems. Support for multiple camera angles and simultaneous recording from different perspectives.</p>
+                    
+                    <div class="tech-specs">
+                        <h4>Compatible Camera Types</h4>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check"></i> USB Webcams (HD, 4K)</li>
+                            <li><i class="fas fa-check"></i> IP/Network Cameras</li>
+                            <li><i class="fas fa-check"></i> CCTV Systems</li>
+                            <li><i class="fas fa-check"></i> Mobile Device Cameras</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-mockup">
+                    <div class="mockup-content">
+                        <i class="fas fa-camera" style="font-size: 4rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+                        <h3>Any Camera, Any Setup</h3>
+                        <p>Flexible & Scalable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Integration -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center mb-4 animate-on-scroll">
+                <h2>Multi-Platform Marketplace Integration</h2>
+                <p>Seamlessly works with all major ecommerce platforms and marketplaces</p>
+            </div>
+            
+            <div class="integration-grid">
+                <div class="integration-card animate-on-scroll">
+                    <div class="integration-logo">
+                        <i class="fab fa-amazon"></i>
+                    </div>
+                    <h4>Amazon</h4>
+                    <p>Full integration with Amazon Seller Central</p>
+                </div>
+                
+                <div class="integration-card animate-on-scroll">
+                    <div class="integration-logo">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h4>Flipkart</h4>
+                    <p>Native support for Flipkart orders</p>
+                </div>
+                
+                <div class="integration-card animate-on-scroll">
+                    <div class="integration-logo">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h4>AJIO</h4>
+                    <p>Seamless AJIO marketplace integration</p>
+                </div>
+                
+                <div class="integration-card animate-on-scroll">
+                    <div class="integration-logo">
+                        <i class="fab fa-shopify"></i>
+                    </div>
+                    <h4>Shopify</h4>
+                    <p>Connect with your Shopify store</p>
+                </div>
+                
+                <div class="integration-card animate-on-scroll">
+                    <div class="integration-logo">
+                        <i class="fas fa-cart-plus"></i>
+                    </div>
+                    <h4>WooCommerce</h4>
+                    <p>WordPress WooCommerce support</p>
+                </div>
+                
+                <div class="integration-card animate-on-scroll">
+                    <div class="integration-logo">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h4>Custom APIs</h4>
+                    <p>Integrate with any platform via API</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & License -->
+    <section class="section">
+        <div class="container">
+            <div class="feature-detail animate-on-scroll">
+                <div>
+                    <h2><i class="fas fa-shield-alt" style="color: var(--accent-blue);"></i> Enterprise-Grade Security</h2>
+                    <p>Advanced license management system with encrypted keys, secure activation, and comprehensive protection. Your data and investment are safeguarded with military-grade security protocols.</p>
+                    
+                    <div class="tech-specs">
+                        <h4>Security Features</h4>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check"></i> 256-bit AES encryption</li>
+                            <li><i class="fas fa-check"></i> Hardware fingerprinting</li>
+                            <li><i class="fas fa-check"></i> Secure cloud activation</li>
+                            <li><i class="fas fa-check"></i> Anti-tampering protection</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-mockup">
+                    <div class="mockup-content">
+                        <i class="fas fa-shield-alt" style="font-size: 4rem; color: var(--accent-blue); margin-bottom: 1rem;"></i>
+                        <h3>Bank-Level Security</h3>
+                        <p>Protected & Encrypted</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Feature -->
+            <div class="feature-detail animate-on-scroll">
+                <div>
+                    <h2><i class="fas fa-chart-line" style="color: var(--accent-green);"></i> Advanced Analytics & Reporting</h2>
+                    <p>Comprehensive insights into your packing process with detailed analytics, recording statistics, and performance metrics. Identify trends, optimize workflows, and track your fraud prevention success.</p>
+                    
+                    <div class="tech-specs">
+                        <h4>Analytics Dashboard</h4>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check"></i> Real-time recording stats</li>
+                            <li><i class="fas fa-check"></i> Fraud prevention metrics</li>
+                            <li><i class="fas fa-check"></i> Performance optimization</li>
+                            <li><i class="fas fa-check"></i> Custom report generation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-mockup">
+                    <div class="mockup-content">
+                        <i class="fas fa-chart-line" style="font-size: 4rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                        <h3>Data-Driven Insights</h3>
+                        <p>Monitor & Optimize</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section text-center" style="background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2 style="color: white;">Experience All Features with Our Free Trial</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">No credit card required • Full feature access • 30-day trial</p>
+                <div class="hero-buttons mt-3">
+                    <a href="download.html" class="btn" style="background: white; color: var(--primary-bg);">
+                        <i class="fas fa-download"></i> Download Free Trial
+                    </a>
+                    <a href="contact.html" class="btn" style="background: transparent; color: white; border: 2px solid white;">
+                        <i class="fas fa-phone"></i> Schedule Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--secondary-bg); padding: 3rem 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h3>ShipSight</h3>
+                    <p>Revolutionary barcode-linked video management system for ecommerce security.</p>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="features.html" style="color: var(--text-secondary); text-decoration: none;">Features</a></li>
+                        <li><a href="pricing.html" style="color: var(--text-secondary); text-decoration: none;">Pricing</a></li>
+                        <li><a href="download.html" style="color: var(--text-secondary); text-decoration: none;">Download</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="support.html" style="color: var(--text-secondary); text-decoration: none;">Help Center</a></li>
+                        <li><a href="contact.html" style="color: var(--text-secondary); text-decoration: none;">Contact</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted);">&copy; 2024 ShipSight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
