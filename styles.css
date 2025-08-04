@@ -215,21 +215,29 @@ p {
   background-clip: text;
 }
 
-/* Navigation */
+/* Apple-Style Navigation */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(16, 19, 28, 0.95);
-  backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border-color);
-  padding: var(--space-lg) 0;
-  transition: var(--transition);
-  height: var(--site-header-height);
+  background: rgba(28, 28, 30, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-md) 0;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  height: auto;
+  min-height: 60px;
   display: flex;
   align-items: center;
+}
+
+.navbar.scrolled {
+  background: rgba(28, 28, 30, 0.95);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
 }
 
 .nav-container {
@@ -251,10 +259,18 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  transition: var(--transition);
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .logo i {
-  color: var(--color-primary-01);
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: var(--fluid-18-20);
 }
 
@@ -271,29 +287,33 @@ p {
   text-decoration: none;
   font-weight: 500;
   font-size: var(--fluid-16-18);
-  transition: var(--transition);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: relative;
-  padding: var(--space-sm) 0;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius-xs);
 }
 
 .nav-links a:hover {
   color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
-  background: var(--color-primary-01);
-  transition: var(--transition);
+  background: var(--gradient-blue);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-radius: 1px;
+  transform: translateX(-50%);
 }
 
 .nav-links a:hover::after {
-  width: 100%;
+  width: 80%;
 }
 
 /* Buttons */
