@@ -350,15 +350,33 @@ p {
 
 /* Feature icons */
 .feature-icon {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
   background: var(--gradient-primary);
-  border-radius: 50%;
+  border-radius: var(--border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: white;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.feature-icon::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius);
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card:hover .feature-icon::after {
+  opacity: 0.2;
 }
 
 /* Animations */
