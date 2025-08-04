@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "echo 'Development server not configured yet'",
+    "dev": "python3 -m http.server 3000",
     "build": "echo 'Build script not configured yet'",
     "start": "echo 'Start script not configured yet'"
   },
