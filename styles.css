@@ -1,26 +1,97 @@
-/* ShipSight - Devin.ai Inspired Design System */
+/* ShipSight - Devin.ai Design System */
 :root {
-  --primary-bg: #0c0e16;
+  --initial-vh: 1vh;
+  --actual-vh: 1vh;
+  --vh: var(--actual-vh);
+  --body-font-size: var(--fluid-16-18);
+  --font-family-heading: "neue-haas-grotesk-display", sans-serif;
+  --font-family-body: "neue-haas-grotesk-text", sans-serif;
+  --body-background-color: #10131c;
+  --body-text-color: var(--color-white);
+  --body-line-height: 1.5;
+  --column-width: calc((100vw - var(--container-padding) * 2 - var(--gutter) * 11) / 12);
+  --column-width-gutter: calc(var(--column-width) + var(--gutter));
+  --column-width-2-gutter: calc(var(--column-width) + var(--gutter) * 2);
+  --site-header-height: calc(var(--space-xl-2xl) * 1.1);
+  --height-without-header: calc(var(--vh) * 100 - var(--site-header-height));
+  --fast-start-easing: cubic-bezier(.17, .67, .1, .99);
+  --faster-start-easing: cubic-bezier(.19, 1, .22, 1);
+  --slow-start-easing: cubic-bezier(.73, 0, 0, 1);
+  --content-list-image-size: calc(var(--space-8xl) * 1.2);
+  --container-padding: 20px;
+  --gutter: 10px;
+
+  /* Colors */
+  --color-error: #ff1a1a;
+  --color-white: #f6f6f6;
+  --color-black: #000000;
+  --color-orange: #ec5d40;
+  --color-primary: #2622f7;
+  --color-light-gray: #fff2e2;
+  --color-primary-01: #4991e5;
+  --color-primary-02: #39bdd6;
+  --color-primary-03: #3bd4cb;
+  --color-primary-04: #bad7f5;
+  --color-primary-05: #e4ecf4;
+  --color-gray: #a7a6a6;
+  --color-gray-light: #c8c7c7;
+  --color-dark: #121111;
+
+  /* Breakpoints */
+  --breakpoints-xs: 0;
+  --breakpoints-ss: 360px;
+  --breakpoints-sm: 940px;
+  --breakpoints-md: 1024px;
+  --breakpoints-md2: 1155px;
+  --breakpoints-ml: 1340px;
+  --breakpoints-lg: 1440px;
+  --breakpoints-lg2: 1600px;
+  --breakpoints-xl: 1960px;
+  --breakpoints-xxl: 2400px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+  --space-5xl: 96px;
+  --space-6xl: 128px;
+  --space-7xl: 160px;
+  --space-8xl: 192px;
+  --space-xl-2xl: var(--space-2xl);
+
+  /* Fluid Typography */
+  --fluid-16-18: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --fluid-18-20: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+  --fluid-20-24: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --fluid-24-32: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --fluid-32-48: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --fluid-48-64: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+
+  /* Legacy mappings for existing code */
+  --primary-bg: var(--body-background-color);
   --secondary-bg: #151924;
   --card-bg: #1a1f2e;
   --border-color: #2a3441;
-  --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-gray);
   --text-muted: #64748b;
-  --accent-blue: #3b82f6;
-  --accent-light-blue: #60a5fa;
-  --accent-green: #10b981;
-  --accent-purple: #8b5cf6;
-  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  --gradient-secondary: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-  --shadow-lg: 0 25px 50px rgba(59, 130, 246, 0.15);
+  --accent-blue: var(--color-primary-01);
+  --accent-green: var(--color-primary-03);
+  --accent-purple: var(--color-primary);
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-01) 0%, var(--color-primary) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--color-primary-03) 0%, var(--color-primary-02) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 100%);
+  --shadow-lg: 0 25px 50px rgba(70, 145, 229, 0.15);
   --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.25);
   --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
   --border-radius: 16px;
   --border-radius-sm: 8px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-family: 'neue-haas-grotesk-text', 'neue-haas-grotesk-display', 'Open Sans', sans-serif;
+  --transition: all 0.3s var(--fast-start-easing);
 }
 
 * {
