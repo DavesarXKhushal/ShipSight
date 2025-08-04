@@ -338,16 +338,104 @@ p {
   }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.6); }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s ease;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-on-scroll.animated {
   opacity: 1;
   transform: translateY(0);
 }
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Enhanced hover effects */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.card:hover::after {
+  left: 100%;
+}
+
+.feature-icon {
+  transition: all 0.3s ease;
+}
+
+.card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Staggered animation delays */
+.animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+.animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
+.animate-on-scroll:nth-child(6) { transition-delay: 0.5s; }
 
 /* Mobile hamburger menu */
 .mobile-menu-toggle {
