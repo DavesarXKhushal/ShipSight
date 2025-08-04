@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use ShipSight - Complete Setup & Usage Guide</title>
+    <meta name="description" content="Learn how to set up and use ShipSight barcode video management system. Step-by-step tutorials for camera setup, barcode scanning, and video management.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .how-to-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            margin-top: 80px;
+        }
+        
+        .step-navigation {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 100px;
+            z-index: 100;
+        }
+        
+        .step-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 1rem;
+        }
+        
+        .step-nav-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .step-nav-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .step-nav-link:hover,
+        .step-nav-link.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+        
+        .tutorial-step {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .tutorial-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .step-instructions {
+            line-height: 1.7;
+        }
+        
+        .step-instructions ol {
+            padding-left: 1.5rem;
+        }
+        
+        .step-instructions li {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .step-instructions strong {
+            color: var(--text-primary);
+        }
+        
+        .step-visual {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .step-visual i {
+            font-size: 4rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .code-block {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            overflow-x: auto;
+        }
+        
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #ffc107;
+        }
+        
+        .warning-box i {
+            margin-right: 0.5rem;
+        }
+        
+        .tip-box {
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid rgba(40, 167, 69, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #28a745;
+        }
+        
+        .tip-box i {
+            margin-right: 0.5rem;
+        }
+        
+        .feature-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-demo {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .feature-demo:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+        }
+        
+        .feature-demo i {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .progress-bar {
+            background: var(--secondary-bg);
+            border-radius: 10px;
+            height: 8px;
+            margin: 2rem 0 1rem;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: var(--gradient-primary);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .video-placeholder {
+            background: var(--secondary-bg);
+            border: 2px dashed var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 3rem 1rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .video-placeholder i {
+            font-size: 3rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .step-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .step-nav-list {
+                flex-direction: column;
+            }
+            
+            .step-nav-item {
+                min-width: auto;
+            }
+            
+            .tutorial-step {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-video"></i> ShipSight
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-to-use.html">How It Works</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="how-to-hero">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h1>Complete Setup & Usage Guide</h1>
+                <p class="hero-description">
+                    Follow our step-by-step tutorials to get ShipSight up and running in your workflow. From installation to advanced features, we've got you covered.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step Navigation -->
+    <section class="section">
+        <div class="container">
+            <div class="step-navigation animate-on-scroll">
+                <h3 style="margin-bottom: 1rem; text-align: center;">Quick Navigation</h3>
+                <ul class="step-nav-list">
+                    <li class="step-nav-item">
+                        <a href="#step-1" class="step-nav-link">1. Installation</a>
+                    </li>
+                    <li class="step-nav-item">
+                        <a href="#step-2" class="step-nav-link">2. License Activation</a>
+                    </li>
+                    <li class="step-nav-item">
+                        <a href="#step-3" class="step-nav-link">3. Camera Setup</a>
+                    </li>
+                    <li class="step-nav-item">
+                        <a href="#step-4" class="step-nav-link">4. Platform Integration</a>
+                    </li>
+                    <li class="step-nav-item">
+                        <a href="#step-5" class="step-nav-link">5. First Recording</a>
+                    </li>
+                    <li class="step-nav-item">
+                        <a href="#step-6" class="step-nav-link">6. Video Management</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%" id="progress-bar"></div>
+            </div>
+            <p style="text-align: center; color: var(--text-secondary);">Setup Progress: <span id="progress-text">0%</span></p>
+        </div>
+    </section>
+
+    <!-- Step 1: Installation -->
+    <section id="step-1" class="tutorial-step animate-on-scroll">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div>
+                    <h2>Download & Installation</h2>
+                    <p style="color: var(--text-secondary); margin: 0;">Get ShipSight installed on your computer</p>
+                </div>
+            </div>
+            
+            <div class="step-content">
+                <div class="step-instructions">
+                    <h3>Installation Process</h3>
+                    <ol>
+                        <li><strong>Download the installer</strong> from our <a href="download.html" style="color: var(--accent-blue);">download page</a> or click the button below</li>
+                        <li><strong>Run the installer</strong> as an administrator (right-click → "Run as administrator")</li>
+                        <li><strong>Follow the setup wizard</strong> - accept the license agreement and choose installation directory</li>
+                        <li><strong>Wait for installation</strong> to complete (typically 2-3 minutes)</li>
+                        <li><strong>Launch ShipSight</strong> from the desktop shortcut or Start menu</li>
+                    </ol>
+                    
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>System Requirements:</strong> Ensure you have Windows 10 (64-bit) or later, 4GB RAM, and 500MB free disk space.
+                    </div>
+                    
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Pro Tip:</strong> Disable antivirus temporarily during installation to avoid false positives with our license protection system.
+                    </div>
+                    
+                    <a href="download.html" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download ShipSight
+                    </a>
+                </div>
+                
+                <div class="step-visual">
+                    <i class="fas fa-download"></i>
+                    <h4>45 MB Download</h4>
+                    <p>Quick & Easy Installation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 2: License Activation -->
+    <section id="step-2" class="tutorial-step animate-on-scroll">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <div>
+                    <h2>License Activation</h2>
+                    <p style="color: var(--text-secondary); margin: 0;">Activate your ShipSight license to unlock all features</p>
+                </div>
+            </div>
+            
+            <div class="step-content">
+                <div class="step-instructions">
+                    <h3>Activation Steps</h3>
+                    <ol>
+                        <li><strong>Launch ShipSight</strong> - the activation dialog will appear automatically</li>
+                        <li><strong>Enter your license key</strong> in the format: XXXX-XXXX-XXXX-XXXX</li>
+                        <li><strong>Provide your email address</strong> used during purchase</li>
+                        <li><strong>Add company name</strong> (optional but recommended for business use)</li>
+                        <li><strong>Click "Activate License"</strong> and wait for confirmation</li>
+                    </ol>
+                    
+                    <div class="code-block">
+                        Example License Key Format:
+                        SHIP-2024-ABCD-1234
+                    </div>
+                    
+                    <h4>Demo & Trial Keys</h4>
+                    <p>For evaluation purposes, you can request a demo key:</p>
+                    <ul>
+                        <li><strong>Demo Key:</strong> DEMO-SHIP-EVAL-2024 (30-day trial)</li>
+                        <li><strong>Master Key:</strong> Contact sales for extended evaluation</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <i class="fas fa-shield-alt"></i>
+                        <strong>Security Note:</strong> License keys are hardware-locked. Contact support for license transfers between computers.
+                    </div>
+                    
+                    <a href="download.html#license-activation" class="btn btn-primary">
+                        <i class="fas fa-key"></i> Activate License
+                    </a>
+                </div>
+                
+                <div class="step-visual">
+                    <i class="fas fa-key"></i>
+                    <h4>Secure Activation</h4>
+                    <p>256-bit Encrypted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 3: Camera Setup -->
+    <section id="step-3" class="tutorial-step animate-on-scroll">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <div>
+                    <h2>Camera Configuration</h2>
+                    <p style="color: var(--text-secondary); margin: 0;">Connect and configure your cameras for optimal recording</p>
+                </div>
+            </div>
+            
+            <div class="step-content">
+                <div class="step-instructions">
+                    <h3>Camera Setup Process</h3>
+                    <ol>
+                        <li><strong>Connect your camera</strong> via USB, IP network, or HDMI capture device</li>
+                        <li><strong>Open ShipSight Settings</strong> → Camera Configuration</li>
+                        <li><strong>Select your camera</strong> from the detected devices list</li>
+                        <li><strong>Adjust video settings</strong> - resolution, frame rate, and quality</li>
+                        <li><strong>Test the camera</strong> using the preview window</li>
+                        <li><strong>Configure recording zones</strong> for optimal packing area coverage</li>
+                    </ol>
+                    
+                    <h4>Supported Camera Types</h4>
+                    <div class="feature-showcase">
+                        <div class="feature-demo">
+                            <i class="fas fa-usb"></i>
+                            <h5>USB Webcams</h5>
+                            <p>HD, Full HD, 4K cameras</p>
+                        </div>
+                        <div class="feature-demo">
+                            <i class="fas fa-wifi"></i>
+                            <h5>IP Cameras</h5>
+                            <p>Network and wireless cameras</p>
+                        </div>
+                        <div class="feature-demo">
+                            <i class="fas fa-video"></i>
+                            <h5>CCTV Systems</h5>
+                            <p>Existing security cameras</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Optimal Camera Positioning</h4>
+                    <ul>
+                        <li><strong>Height:</strong> 3-5 feet above packing surface</li>
+                        <li><strong>Angle:</strong> 45-60 degrees for best view</li>
+                        <li><strong>Lighting:</strong> Ensure adequate lighting for clear video</li>
+                        <li><strong>Coverage:</strong> Frame the entire packing area</li>
+                    </ul>
+                    
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Pro Tip:</strong> Use multiple cameras for different angles. ShipSight can record from up to 4 cameras simultaneously.
+                    </div>
+                </div>
+                
+                <div class="step-visual">
+                    <i class="fas fa-camera"></i>
+                    <h4>Multi-Camera Support</h4>
+                    <p>Up to 4 Simultaneous Cameras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 4: Platform Integration -->
+    <section id="step-4" class="tutorial-step animate-on-scroll">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <div>
+                    <h2>Ecommerce Platform Integration</h2>
+                    <p style="color: var(--text-secondary); margin: 0;">Connect ShipSight with your marketplace or ecommerce platform</p>
+                </div>
+            </div>
+            
+            <div class="step-content">
+                <div class="step-instructions">
+                    <h3>Integration Setup</h3>
+                    <ol>
+                        <li><strong>Navigate to Settings</strong> → Platform Integration</li>
+                        <li><strong>Select your platform</strong> from the available options</li>
+                        <li><strong>Enter API credentials</strong> or login information</li>
+                        <li><strong>Configure order sync settings</strong> - frequency and data fields</li>
+                        <li><strong>Test the connection</strong> to ensure proper data flow</li>
+                        <li><strong>Set up automatic order detection</strong> for seamless workflow</li>
+                    </ol>
+                    
+                    <h4>Platform-Specific Instructions</h4>
+                    
+                    <div style="background: var(--secondary-bg); border-radius: 8px; padding: 1.5rem; margin: 1rem 0;">
+                        <h5><i class="fab fa-amazon" style="color: #ff9900;"></i> Amazon Integration</h5>
+                        <ol style="margin: 0.5rem 0;">
+                            <li>Log into Amazon Seller Central</li>
+                            <li>Go to Settings → User Permissions</li>
+                            <li>Generate API keys for ShipSight</li>
+                            <li>Enter Marketplace ID and Seller ID in ShipSight</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="background: var(--secondary-bg); border-radius: 8px; padding: 1.5rem; margin: 1rem 0;">
+                        <h5><i class="fas fa-store" style="color: #2074F0;"></i> Flipkart Integration</h5>
+                        <ol style="margin: 0.5rem 0;">
+                            <li>Access Flipkart Seller Hub</li>
+                            <li>Navigate to API Management</li>
+                            <li>Create new API application for ShipSight</li>
+                            <li>Copy App ID and Secret to ShipSight settings</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="background: var(--secondary-bg); border-radius: 8px; padding: 1.5rem; margin: 1rem 0;">
+                        <h5><i class="fab fa-shopify" style="color: #96bf48;"></i> Shopify Integration</h5>
+                        <ol style="margin: 0.5rem 0;">
+                            <li>Install ShipSight app from Shopify App Store</li>
+                            <li>Authorize app permissions</li>
+                            <li>Configure webhook settings</li>
+                            <li>Test order synchronization</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>API Rate Limits:</strong> Each platform has API rate limits. ShipSight automatically manages these to prevent service interruptions.
+                    </div>
+                </div>
+                
+                <div class="step-visual">
+                    <i class="fas fa-link"></i>
+                    <h4>Universal Integration</h4>
+                    <p>All Major Platforms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 5: First Recording -->
+    <section id="step-5" class="tutorial-step animate-on-scroll">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <div>
+                    <h2>Your First Recording</h2>
+                    <p style="color: var(--text-secondary); margin: 0;">Learn how to scan barcodes and create your first shipping video</p>
+                </div>
+            </div>
+            
+            <div class="step-content">
+                <div class="step-instructions">
+                    <h3>Recording Workflow</h3>
+                    <ol>
+                        <li><strong>Prepare your packing station</strong> - ensure good lighting and camera positioning</li>
+                        <li><strong>Have your barcode scanner ready</strong> - USB scanner or smartphone app</li>
+                        <li><strong>Start ShipSight recording mode</strong> - click the "Start Recording Session" button</li>
+                        <li><strong>Scan the order barcode</strong> - the system will automatically start recording</li>
+                        <li><strong>Pack your items normally</strong> - show items clearly to the camera</li>
+                        <li><strong>Scan completion barcode</strong> or click "Stop Recording" when finished</li>
+                    </ol>
+                    
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <h4>Video Tutorial: First Recording</h4>
+                        <p>Watch our step-by-step video guide</p>
+                        <button class="btn btn-primary" onclick="playTutorialVideo()">
+                            <i class="fas fa-play"></i> Play Tutorial
+                        </button>
+                    </div>
+                    
+                    <h4>Best Practices for Recording</h4>
+                    <ul>
+                        <li><strong>Show items clearly:</strong> Hold items up to camera before packing</li>
+                        <li><strong>Demonstrate condition:</strong> Show that items are new/undamaged</li>
+                        <li><strong>Show packaging materials:</strong> Display bubble wrap, padding used</li>
+                        <li><strong>Scan shipping label:</strong> Include tracking number in video</li>
+                        <li><strong>Maintain steady pace:</strong> Don't rush - thorough documentation is key</li>
+                    </ul>
+                    
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Pro Tip:</strong> Add voice commentary describing what you're packing. Audio is recorded along with video for additional evidence.
+                    </div>
+                </div>
+                
+                <div class="step-visual">
+                    <i class="fas fa-play-circle"></i>
+                    <h4>Automated Recording</h4>
+                    <p>Scan to Start/Stop</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 6: Video Management -->
+    <section id="step-6" class="tutorial-step animate-on-scroll">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <div>
+                    <h2>Managing Your Videos</h2>
+                    <p style="color: var(--text-secondary); margin: 0;">Organize, search, and access your shipping proof videos</p>
+                </div>
+            </div>
+            
+            <div class="step-content">
+                <div class="step-instructions">
+                    <h3>Video Library Features</h3>
+                    <ol>
+                        <li><strong>Access Video Library</strong> - click "Video Management" in the main interface</li>
+                        <li><strong>Search by criteria</strong> - tracking number, date, customer name, or order ID</li>
+                        <li><strong>Filter recordings</strong> - by date range, platform, or recording status</li>
+                        <li><strong>Preview videos</strong> - thumbnail view with quick preview option</li>
+                        <li><strong>Export videos</strong> - download for dispute resolution or evidence</li>
+                        <li><strong>Share secure links</strong> - provide access to specific videos when needed</li>
+                    </ol>
+                    
+                    <h4>Advanced Management Features</h4>
+                    <div class="feature-showcase">
+                        <div class="feature-demo">
+                            <i class="fas fa-search"></i>
+                            <h5>Smart Search</h5>
+                            <p>Find videos instantly by any criteria</p>
+                        </div>
+                        <div class="feature-demo">
+                            <i class="fas fa-tags"></i>
+                            <h5>Auto-Tagging</h5>
+                            <p>Automatic metadata and categorization</p>
+                        </div>
+                        <div class="feature-demo">
+                            <i class="fas fa-cloud"></i>
+                            <h5>Cloud Backup</h5>
+                            <p>Secure cloud storage and sync</p>
+                        </div>
+                        <div class="feature-demo">
+                            <i class="fas fa-chart-bar"></i>
+                            <h5>Analytics</h5>
+                            <p>Recording statistics and insights</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Using Videos for Dispute Resolution</h4>
+                    <ol>
+                        <li><strong>Identify disputed order</strong> using tracking number or order ID</li>
+                        <li><strong>Locate corresponding video</strong> in your library</li>
+                        <li><strong>Create dispute evidence package</strong> with video and metadata</li>
+                        <li><strong>Submit to marketplace</strong> through their dispute resolution process</li>
+                        <li><strong>Provide secure video link</strong> if direct upload isn't possible</li>
+                    </ol>
+                    
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Pro Tip:</strong> Set up automatic cloud backup to ensure your video evidence is always safe and accessible.
+                    </div>
+                    
+                    <div class="warning-box">
+                        <i class="fas fa-clock"></i>
+                        <strong>Retention Policy:</strong> Keep videos for at least 6 months after delivery to cover return windows and dispute periods.
+                    </div>
+                </div>
+                
+                <div class="step-visual">
+                    <i class="fas fa-video"></i>
+                    <h4>Powerful Library</h4>
+                    <p>Search & Organize</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Completion Section -->
+    <section class="section text-center" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2>🎉 Congratulations!</h2>
+                <p class="hero-description">
+                    You've successfully set up ShipSight and learned the complete workflow. You're now ready to protect your business from fraudulent returns with professional video evidence.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="support.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-life-ring"></i> Get Additional Support
+                    </a>
+                    <a href="features.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-star"></i> Explore Advanced Features
+                    </a>
+                </div>
+                
+                <div class="mt-4">
+                    <h3>What's Next?</h3>
+                    <div class="grid grid-3 mt-3">
+                        <div class="card">
+                            <i class="fas fa-cogs" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 1rem;"></i>
+                            <h4>Optimize Settings</h4>
+                            <p>Fine-tune recording quality, storage, and automation settings</p>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-users" style="font-size: 2rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                            <h4>Train Your Team</h4>
+                            <p>Share this guide with your packing team for consistent video quality</p>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+                            <h4>Monitor Analytics</h4>
+                            <p>Track your recording statistics and fraud prevention success</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--secondary-bg); padding: 3rem 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h3>ShipSight</h3>
+                    <p>Revolutionary barcode-linked video management system for ecommerce security.</p>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="features.html" style="color: var(--text-secondary); text-decoration: none;">Features</a></li>
+                        <li><a href="download.html" style="color: var(--text-secondary); text-decoration: none;">Download</a></li>
+                        <li><a href="how-to-use.html" style="color: var(--text-secondary); text-decoration: none;">How It Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="support.html" style="color: var(--text-secondary); text-decoration: none;">Help Center</a></li>
+                        <li><a href="contact.html" style="color: var(--text-secondary); text-decoration: none;">Contact</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted);">&copy; 2024 ShipSight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Progress tracking
+        let completedSteps = 0;
+        const totalSteps = 6;
+        
+        function updateProgress() {
+            const progress = (completedSteps / totalSteps) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = Math.round(progress) + '%';
+        }
+        
+        // Step navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.step-nav-link');
+            const steps = document.querySelectorAll('.tutorial-step');
+            
+            // Intersection Observer for step tracking
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const stepId = entry.target.id;
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + stepId) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+        });
+        
+        function playTutorialVideo() {
+            showNotification('Tutorial video would open here. In a real application, this would launch a video player.', 'info');
+        }
+        
+        // Mark steps as completed (this would be integrated with actual user actions)
+        function markStepCompleted(stepNumber) {
+            completedSteps = Math.max(completedSteps, stepNumber);
+            updateProgress();
+            showNotification(`Step ${stepNumber} completed! Keep up the great work.`, 'success');
+        }
+        
+        // Simulate step completion for demo
+        document.querySelectorAll('.tutorial-step').forEach((step, index) => {
+            step.addEventListener('click', () => {
+                markStepCompleted(index + 1);
+            });
+        });
+    </script>
+</body>
+</html>
