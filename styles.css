@@ -316,33 +316,43 @@ p {
   width: 80%;
 }
 
-/* Buttons */
+/* Apple-Style Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
   border: none;
   border-radius: var(--border-radius-sm);
+  font-family: var(--font-family-body);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   font-size: 0.95rem;
   letter-spacing: -0.01em;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn-primary {
-  background: var(--gradient-primary);
+  background: var(--gradient-blue);
   color: white;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 14px 0 rgba(0, 122, 255, 0.3);
+  border: 1px solid transparent;
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px 0 rgba(0, 122, 255, 0.4);
 }
 
 .btn-primary::before {
@@ -352,8 +362,8 @@ p {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .btn-primary:hover::before {
@@ -361,21 +371,32 @@ p {
 }
 
 .btn-secondary {
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent-blue);
-  background: var(--secondary-bg);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(0, 122, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px 0 rgba(0, 122, 255, 0.2);
 }
 
 .btn-large {
   padding: 1.125rem 2.25rem;
   font-size: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.btn i {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.btn:hover i {
+  transform: scale(1.1);
 }
 
 /* Containers */
