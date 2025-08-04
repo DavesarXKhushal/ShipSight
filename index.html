@@ -3,36 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Development Server</title>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            line-height: 1.6;
-        }
-        .status {
-            padding: 1rem;
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            border-radius: 4px;
-            color: #155724;
-        }
-    </style>
+    <title>ShipSight - Secure Every Order with Smart Barcode-Linked Packing Video Proof</title>
+    <meta name="description" content="ShipSight is a revolutionary Barcode-Linked Video Management System for ecommerce sellers. Reduce fraudulent returns with automated video proof of every shipment.">
+    <meta name="keywords" content="barcode video recording, ecommerce security, return fraud prevention, shipping proof, warehouse management">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ShipSight - Smart Video Proof for Every Shipment">
+    <meta property="og:description" content="Revolutionary barcode-linked video management system for ecommerce sellers">
+    <meta property="og:image" content="/og-image.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>Development Server Running</h1>
-    <div class="status">
-        <strong>✅ Server is now functional!</strong>
-        <p>The application has been successfully debugged and is ready for development.</p>
-    </div>
-    
-    <h2>Next Steps</h2>
-    <ul>
-        <li>Add your application code</li>
-        <li>Install required dependencies</li>
-        <li>Configure build tools as needed</li>
-    </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-video"></i> ShipSight
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#support">Support</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <div class="hero-subtitle">Revolutionary Video Management System</div>
+                <h1>ShipSight: <span class="typewriter">Secure Every Order</span> with Smart Barcode-Linked Packing Video Proof</h1>
+                <p class="hero-description">
+                    Your one-stop VMS solution for dispute-free, confidence-inspiring shipments. Connect any camera, scan barcodes, and automatically link video proof to every order across all major ecommerce platforms.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary btn-large">
+                        <i class="fas fa-download"></i> Download Free Trial
+                    </a>
+                    <a href="#demo" class="btn btn-secondary btn-large">
+                        <i class="fas fa-play"></i> Watch Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="text-center mb-4 animate-on-scroll">
+                <h2>Powerful Features for Complete Shipment Security</h2>
+                <p>Everything you need to protect your business from fraudulent return claims</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-barcode"></i>
+                    </div>
+                    <h3>Barcode-Triggered Recording</h3>
+                    <p>Simply scan any order barcode to instantly start recording. Our smart system automatically detects and processes all major barcode formats.</p>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Auto Order-Video Linking</h3>
+                    <p>Every video is automatically linked to its tracking ID and order details. No manual work required - just scan and pack with confidence.</p>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Universal Camera Support</h3>
+                    <p>Works with webcams, IP cameras, CCTV systems, and mobile devices. Use any camera setup that fits your workflow.</p>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Multi-Platform Compatible</h3>
+                    <p>Seamlessly integrates with Amazon, Flipkart, AJIO, and all major ecommerce platforms. One solution for all your marketplaces.</p>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure License System</h3>
+                    <p>Enterprise-grade security with encrypted license keys. Protect your investment with our robust activation system.</p>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Track recording statistics, identify patterns, and optimize your packing process with detailed reporting and insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="text-center mb-4 animate-on-scroll">
+                <h2>How ShipSight Works</h2>
+                <p>Simple 3-step process to secure every shipment</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card text-center animate-on-scroll">
+                    <div class="feature-icon">
+                        <span style="font-weight: bold; color: white;">1</span>
+                    </div>
+                    <h3>Connect & Setup</h3>
+                    <p>Install ShipSight, connect your camera, and activate your license key. Takes less than 5 minutes to get started.</p>
+                </div>
+
+                <div class="card text-center animate-on-scroll">
+                    <div class="feature-icon">
+                        <span style="font-weight: bold; color: white;">2</span>
+                    </div>
+                    <h3>Scan & Record</h3>
+                    <p>Scan the order barcode to automatically start recording. Pack your items normally while the camera captures everything.</p>
+                </div>
+
+                <div class="card text-center animate-on-scroll">
+                    <div class="feature-icon">
+                        <span style="font-weight: bold; color: white;">3</span>
+                    </div>
+                    <h3>Auto-Link & Protect</h3>
+                    <p>Video is automatically linked to the tracking ID and stored securely. Access anytime for dispute resolution or claims.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="grid grid-4 text-center">
+                <div class="animate-on-scroll">
+                    <h3 class="counter" data-target="10000">0</h3>
+                    <p>Orders Protected</p>
+                </div>
+                <div class="animate-on-scroll">
+                    <h3 class="counter" data-target="95">0</h3>
+                    <p>% Fraud Reduction</p>
+                </div>
+                <div class="animate-on-scroll">
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>+ Happy Merchants</p>
+                </div>
+                <div class="animate-on-scroll">
+                    <h3 class="counter" data-target="24">0</h3>
+                    <p>Hour Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section text-center">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2>Ready to Protect Your Business?</h2>
+                <p class="hero-description">Join thousands of merchants already using ShipSight to secure their shipments and reduce fraudulent returns.</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary btn-large">
+                        <i class="fas fa-download"></i> Start Free Trial
+                    </a>
+                    <a href="#contact" class="btn btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Schedule Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--secondary-bg); padding: 3rem 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h3>ShipSight</h3>
+                    <p>Revolutionary barcode-linked video management system for ecommerce security.</p>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#features" style="color: var(--text-secondary); text-decoration: none;">Features</a></li>
+                        <li><a href="#pricing" style="color: var(--text-secondary); text-decoration: none;">Pricing</a></li>
+                        <li><a href="#download" style="color: var(--text-secondary); text-decoration: none;">Download</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#support" style="color: var(--text-secondary); text-decoration: none;">Help Center</a></li>
+                        <li><a href="#contact" style="color: var(--text-secondary); text-decoration: none;">Contact</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted);">&copy; 2024 ShipSight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
