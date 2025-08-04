@@ -267,14 +267,21 @@ p {
 }
 
 .logo-image {
-  height: 32px;
+  height: 28px;
   width: auto;
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
   transition: var(--transition);
+  object-fit: contain;
 }
 
 .logo:hover .logo-image {
   transform: scale(1.05);
+}
+
+/* Footer logo sizing */
+.footer-brand .logo-image {
+  height: 32px;
+  margin-right: 0.75rem;
 }
 
 .nav-links {
