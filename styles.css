@@ -121,11 +121,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif !important;
+}
+
+::selection {
+  background: rgba(0, 122, 255, 0.2);
+  color: var(--color-white);
 }
 
 body {
-  font-family: "Poppins", var(--font-family-body) !important;
+  font-family: var(--font-family-body);
   background: var(--body-background-color);
   color: var(--body-text-color);
   line-height: var(--body-line-height);
@@ -135,6 +139,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 /* Typography */
