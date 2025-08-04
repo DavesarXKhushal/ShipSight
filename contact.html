@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact ShipSight - Get in Touch with Our Team</title>
+    <meta name="description" content="Contact ShipSight for sales inquiries, support, partnerships, or general questions. Multiple ways to reach our expert team.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .contact-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            margin-top: 80px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin: 3rem 0;
+        }
+        
+        .contact-info {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .contact-details p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+        
+        .contact-details a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--secondary-bg);
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .office-locations {
+            background: var(--secondary-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .location-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .location-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .location-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .business-hours {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .hours-grid {
+            display: grid;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-day {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .hours-time {
+            color: var(--text-secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+        
+        .response-time {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .response-time i {
+            color: var(--accent-green);
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-video"></i> ShipSight
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-to-use.html">How It Works</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h1>Get in Touch</h1>
+                <p class="hero-description">
+                    Have questions about ShipSight? Need a demo or custom solution? Our expert team is here to help you secure your ecommerce operations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information & Form -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info animate-on-scroll">
+                    <h2 style="margin-bottom: 2rem;">Contact Information</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Support</h4>
+                            <p><a href="tel:+1-555-SHIP-VMS">+1 (555) SHIP-VMS</a></p>
+                            <p><a href="tel:+1-555-744-7867">+1 (555) 744-7867</a></p>
+                            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Mon-Fri: 9 AM - 6 PM EST</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Support</h4>
+                            <p><a href="mailto:support@shipsight.com">support@shipsight.com</a></p>
+                            <p><a href="mailto:sales@shipsight.com">sales@shipsight.com</a></p>
+                            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Response within 4 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Live Chat</h4>
+                            <p>Instant support via live chat</p>
+                            <p>Available 24/7 for urgent issues</p>
+                            <button class="btn btn-primary" onclick="openLiveChat()" style="margin-top: 0.5rem;">
+                                <i class="fas fa-comments"></i> Start Chat
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Headquarters</h4>
+                            <p>123 Tech Innovation Drive<br>
+                            Silicon Valley, CA 94025<br>
+                            United States</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form animate-on-scroll">
+                    <h2 style="margin-bottom: 2rem;">Send Us a Message</h2>
+                    
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiry-type">Inquiry Type *</label>
+                                <select id="inquiry-type" name="inquiry-type" required>
+                                    <option value="">Select inquiry type</option>
+                                    <option value="sales">Sales & Pricing</option>
+                                    <option value="demo">Request Demo</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="billing">Billing Question</option>
+                                    <option value="feature">Feature Request</option>
+                                    <option value="integration">Custom Integration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" placeholder="Brief description of your inquiry" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Please provide details about your inquiry, current setup, or specific requirements." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="monthly-orders">Monthly Order Volume (optional)</label>
+                            <select id="monthly-orders" name="monthly-orders">
+                                <option value="">Select volume range</option>
+                                <option value="0-100">0 - 100 orders</option>
+                                <option value="100-500">100 - 500 orders</option>
+                                <option value="500-1000">500 - 1,000 orders</option>
+                                <option value="1000-5000">1,000 - 5,000 orders</option>
+                                <option value="5000+">5,000+ orders</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    
+                    <div class="response-time">
+                        <i class="fas fa-clock"></i>
+                        <strong>Quick Response Guarantee:</strong> We respond to all inquiries within 4 hours during business hours.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center mb-4 animate-on-scroll">
+                <h2>Business Hours & Support Availability</h2>
+                <p>Our team is available across multiple time zones to serve you better</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="business-hours animate-on-scroll">
+                    <h3><i class="fas fa-headset" style="color: var(--accent-blue); margin-right: 0.5rem;"></i> Support Hours</h3>
+                    <div class="hours-grid">
+                        <div class="hours-row">
+                            <span class="hours-day">Monday - Friday</span>
+                            <span class="hours-time">9:00 AM - 6:00 PM EST</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Saturday</span>
+                            <span class="hours-time">10:00 AM - 4:00 PM EST</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Sunday</span>
+                            <span class="hours-time">Emergency Support Only</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Live Chat</span>
+                            <span class="hours-time">24/7 Available</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="business-hours animate-on-scroll">
+                    <h3><i class="fas fa-phone-alt" style="color: var(--accent-green); margin-right: 0.5rem;"></i> Sales Hours</h3>
+                    <div class="hours-grid">
+                        <div class="hours-row">
+                            <span class="hours-day">Monday - Friday</span>
+                            <span class="hours-time">8:00 AM - 8:00 PM EST</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Saturday</span>
+                            <span class="hours-time">9:00 AM - 5:00 PM EST</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Sunday</span>
+                            <span class="hours-time">Closed</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-day">Holiday Hours</span>
+                            <span class="hours-time">Limited Availability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section class="section">
+        <div class="container">
+            <div class="office-locations animate-on-scroll">
+                <div class="text-center mb-3">
+                    <h2>Global Presence</h2>
+                    <p>Serving customers worldwide with local support and expertise</p>
+                </div>
+                
+                <div class="location-grid">
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>North America HQ</h4>
+                        <p>123 Tech Innovation Drive<br>
+                        Silicon Valley, CA 94025<br>
+                        United States</p>
+                        <p style="color: var(--accent-blue); margin-top: 1rem;">
+                            <i class="fas fa-phone"></i> +1 (555) 744-7867
+                        </p>
+                    </div>
+                    
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h4>Asia Pacific</h4>
+                        <p>456 Business Plaza<br>
+                        Singapore 018989<br>
+                        Singapore</p>
+                        <p style="color: var(--accent-blue); margin-top: 1rem;">
+                            <i class="fas fa-phone"></i> +65 6789 0123
+                        </p>
+                    </div>
+                    
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-globe-europe"></i>
+                        </div>
+                        <h4>Europe</h4>
+                        <p>789 Innovation Center<br>
+                        London EC2A 4NE<br>
+                        United Kingdom</p>
+                        <p style="color: var(--accent-blue); margin-top: 1rem;">
+                            <i class="fas fa-phone"></i> +44 20 7946 0958
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media & Connect -->
+    <section class="section text-center" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2>Connect With Us</h2>
+                <p>Follow us on social media for updates, tips, and industry insights</p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+                
+                <div class="mt-4">
+                    <h3>Ready to Get Started?</h3>
+                    <div class="hero-buttons mt-3">
+                        <a href="download.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-download"></i> Start Free Trial
+                        </a>
+                        <a href="#" onclick="requestDemo()" class="btn btn-secondary btn-large">
+                            <i class="fas fa-calendar"></i> Schedule Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--primary-bg); padding: 3rem 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h3>ShipSight</h3>
+                    <p>Revolutionary barcode-linked video management system for ecommerce security.</p>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="features.html" style="color: var(--text-secondary); text-decoration: none;">Features</a></li>
+                        <li><a href="download.html" style="color: var(--text-secondary); text-decoration: none;">Download</a></li>
+                        <li><a href="how-to-use.html" style="color: var(--text-secondary); text-decoration: none;">How It Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="support.html" style="color: var(--text-secondary); text-decoration: none;">Help Center</a></li>
+                        <li><a href="contact.html" style="color: var(--text-secondary); text-decoration: none;">Contact</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted);">&copy; 2024 ShipSight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Simulate form submission
+            showNotification('Message sent successfully! We\'ll get back to you within 4 hours.', 'success');
+            this.reset();
+        });
+        
+        function openLiveChat() {
+            showNotification('Live chat opening... Connecting you with a support agent.', 'info');
+            // In a real application, this would open a live chat widget
+        }
+        
+        function requestDemo() {
+            showNotification('Demo request submitted! Our sales team will contact you within 24 hours.', 'success');
+        }
+        
+        // Auto-update subject based on inquiry type
+        document.getElementById('inquiry-type').addEventListener('change', function() {
+            const subjectField = document.getElementById('subject');
+            const selectedType = this.value;
+            
+            const subjectTemplates = {
+                'sales': 'Sales Inquiry - Pricing and Plans',
+                'demo': 'Demo Request - ShipSight Evaluation',
+                'support': 'Technical Support Request',
+                'partnership': 'Partnership Opportunity',
+                'billing': 'Billing Question',
+                'feature': 'Feature Request',
+                'integration': 'Custom Integration Inquiry'
+            };
+            
+            if (selectedType && subjectTemplates[selectedType] && !subjectField.value) {
+                subjectField.value = subjectTemplates[selectedType];
+            }
+        });
+    </script>
+</body>
+</html>
