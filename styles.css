@@ -481,21 +481,26 @@ p {
   50% { transform: translateY(0); opacity: 1; }
 }
 
-/* Cards */
-.card {
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  padding: 2.5rem;
+  padding: 2rem;
+  text-align: center;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
-.card::before {
+.feature-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -505,17 +510,158 @@ p {
   background: var(--gradient-primary);
   transform: scaleX(0);
   transition: var(--transition);
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
-.card:hover::before {
+.feature-card:hover::before {
   transform: scaleX(1);
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.feature-card:hover {
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(59, 130, 246, 0.3);
+  border-color: rgba(73, 145, 229, 0.3);
+}
+
+.feature-card .feature-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.feature-card h3 {
+  font-size: var(--fluid-18-20);
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: var(--fluid-16-18);
+  margin: 0;
+}
+
+/* How It Works */
+.how-it-works {
+  background: var(--secondary-bg);
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.step {
+  text-align: center;
+  max-width: 200px;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto 1rem;
+}
+
+.step h3 {
+  font-size: var(--fluid-18-20);
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.step p {
+  color: var(--text-secondary);
+  font-size: var(--fluid-16-18);
+  margin: 0;
+}
+
+/* Platforms Section */
+.platforms-section {
+  background: var(--card-bg);
+}
+
+.platforms-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.platform-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  transition: var(--transition);
+}
+
+.platform-item:hover {
+  transform: translateY(-4px);
+}
+
+.platform-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.platform-logo.amazon { background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%); }
+.platform-logo.flipkart { background: linear-gradient(135deg, #2874f0 0%, #1557b3 100%); }
+.platform-logo.myntra { background: linear-gradient(135deg, #ee1c7a 0%, #c1185b 100%); }
+.platform-logo.ajio { background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%); }
+.platform-logo.other { background: var(--gradient-primary); }
+
+.platform-item span {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--secondary-bg);
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: var(--fluid-32-48);
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: var(--fluid-18-20);
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Grid layouts */
