@@ -103,7 +103,7 @@
 }
 
 body {
-  font-family: var(--font-family-body);
+  font-family: "Poppins", var(--font-family-body) !important;
   background: var(--body-background-color);
   color: var(--body-text-color);
   line-height: var(--body-line-height);
