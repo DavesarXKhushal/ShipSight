@@ -557,12 +557,27 @@ p {
 .card-content {
   text-align: center;
   position: relative;
+  padding: 2rem 0;
 }
 
-.card-content i {
-  font-size: 3rem;
-  color: var(--text-secondary);
+.card-content svg {
+  font-size: 5rem;
+  color: var(--accent-blue);
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 20px rgba(0, 122, 255, 0.3));
+}
+
+.card-content h3 {
+  font-size: var(--fluid-24-32);
+  color: var(--text-primary);
   margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.card-content p {
+  font-size: var(--fluid-16-18);
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .scan-line {
