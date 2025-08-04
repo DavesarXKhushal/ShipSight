@@ -101,10 +101,11 @@
 }
 
 body {
-  font-family: var(--font-family);
-  background: var(--primary-bg);
-  color: var(--text-primary);
-  line-height: 1.65;
+  font-family: var(--font-family-body);
+  background: var(--body-background-color);
+  color: var(--body-text-color);
+  line-height: var(--body-line-height);
+  font-size: var(--body-font-size);
   overflow-x: hidden;
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   text-rendering: optimizeLegibility;
@@ -114,16 +115,17 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
   font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: var(--space-lg);
   letter-spacing: -0.025em;
 }
 
 h1 {
-  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-size: var(--fluid-48-64);
   font-weight: 700;
-  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -131,28 +133,34 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-size: var(--fluid-32-48);
   font-weight: 600;
   color: var(--text-primary);
 }
 
 h3 {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: var(--fluid-24-32);
   font-weight: 600;
   color: var(--text-primary);
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: var(--fluid-20-24);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+h5 {
+  font-size: var(--fluid-18-20);
   font-weight: 600;
   color: var(--text-primary);
 }
 
 p {
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  font-size: 1.125rem;
-  line-height: 1.75;
+  margin-bottom: var(--space-lg);
+  font-size: var(--fluid-16-18);
+  line-height: 1.6;
 }
 
 /* Navigation */
