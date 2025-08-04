@@ -286,43 +286,33 @@ p {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: var(--space-xl);
+  gap: 2rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   font-family: var(--font-family-body);
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-weight: 500;
-  font-size: var(--fluid-16-18);
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
   position: relative;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--border-radius-xs);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  letter-spacing: -0.01em;
 }
 
 .nav-links a:hover {
-  color: var(--text-primary);
+  color: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-links a.active {
+  color: rgba(255, 255, 255, 1);
   background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--gradient-blue);
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  border-radius: 1px;
-  transform: translateX(-50%);
-}
-
-.nav-links a:hover::after {
-  width: 80%;
 }
 
 /* Apple-Style Buttons */
