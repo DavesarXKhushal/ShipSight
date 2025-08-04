@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & FAQ - ShipSight Help Center</title>
+    <meta name="description" content="Get help with ShipSight. Find answers to common questions, system requirements, troubleshooting guides, and contact our support team.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .support-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            margin-top: 80px;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--accent-blue);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .faq-question i {
+            color: var(--accent-blue);
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .support-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .support-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .support-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--secondary-bg);
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .priority-high {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+        }
+        
+        .priority-medium {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+        
+        .priority-low {
+            background: rgba(40, 167, 69, 0.2);
+            color: #28a745;
+        }
+        
+        .live-chat {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+        
+        .live-chat:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-video"></i> ShipSight
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-to-use.html">How It Works</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="support-hero">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h1>How Can We Help You?</h1>
+                <p class="hero-description">
+                    Find answers to common questions, troubleshooting guides, and get in touch with our support team.
+                </p>
+                
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for help articles, guides, or common issues..." id="search-input">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Options -->
+    <section class="section">
+        <div class="container">
+            <div class="support-grid animate-on-scroll">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Documentation</h3>
+                    <p>Comprehensive guides and tutorials to help you get the most out of ShipSight.</p>
+                    <a href="#documentation" class="btn btn-primary">Browse Docs</a>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Tutorials</h3>
+                    <p>Step-by-step video guides covering installation, setup, and advanced features.</p>
+                    <a href="#tutorials" class="btn btn-primary">Watch Videos</a>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Community Forum</h3>
+                    <p>Connect with other users, share tips, and get help from the ShipSight community.</p>
+                    <a href="#forum" class="btn btn-primary">Join Forum</a>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Live Support</h3>
+                    <p>Get instant help from our expert support team via live chat or phone.</p>
+                    <a href="#contact-form" class="btn btn-primary">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center mb-4 animate-on-scroll">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to the most common questions about ShipSight</p>
+            </div>
+            
+            <div class="faq-section">
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What are the system requirements for ShipSight?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Operating System:</strong> Windows 10 (64-bit) or later, Windows 11 recommended</p>
+                            <p><strong>Hardware:</strong> Intel i3 or AMD equivalent, 4 GB RAM (8 GB recommended), 500 MB free disk space</p>
+                            <p><strong>Camera:</strong> Any USB webcam, IP camera, or CCTV system with DirectShow support</p>
+                            <p><strong>Connectivity:</strong> Internet connection for activation and updates</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>Which camera types are compatible with ShipSight?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>ShipSight supports a wide range of camera types:</p>
+                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                                <li>USB webcams (HD, Full HD, 4K)</li>
+                                <li>IP/Network cameras (RTSP, HTTP)</li>
+                                <li>CCTV systems and security cameras</li>
+                                <li>Mobile device cameras (via network connection)</li>
+                                <li>Professional camcorders with USB/HDMI capture</li>
+                            </ul>
+                            <p>The software automatically detects most DirectShow-compatible devices.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>How do I integrate ShipSight with my ecommerce platform?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>ShipSight integrates seamlessly with major platforms:</p>
+                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                                <li><strong>Amazon:</strong> Direct integration with Seller Central API</li>
+                                <li><strong>Flipkart:</strong> Native support for Flipkart order management</li>
+                                <li><strong>AJIO:</strong> Built-in AJIO marketplace integration</li>
+                                <li><strong>Shopify:</strong> App available in Shopify App Store</li>
+                                <li><strong>WooCommerce:</strong> WordPress plugin for easy setup</li>
+                                <li><strong>Custom platforms:</strong> REST API for custom integrations</li>
+                            </ul>
+                            <p>Setup typically takes 5-10 minutes with our guided integration wizard.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What barcode formats does ShipSight support?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Our advanced barcode recognition engine supports 15+ formats:</p>
+                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                                <li>UPC-A and UPC-E</li>
+                                <li>EAN-13 and EAN-8</li>
+                                <li>Code 39, Code 93, Code 128</li>
+                                <li>QR codes and Data Matrix</li>
+                                <li>PDF417 and Aztec codes</li>
+                                <li>ITF (Interleaved 2 of 5)</li>
+                                <li>Custom tracking number formats</li>
+                            </ul>
+                            <p>Scanning accuracy is 99.9% with 0.2-second recognition time.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>How does license activation work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>License activation is secure and straightforward:</p>
+                            <ol style="margin: 1rem 0; padding-left: 1.5rem;">
+                                <li>Purchase your license and receive the activation key via email</li>
+                                <li>Install ShipSight on your computer</li>
+                                <li>Enter your license key and email during first launch</li>
+                                <li>The software connects securely to our activation servers</li>
+                                <li>Your license is validated and the software is unlocked</li>
+                            </ol>
+                            <p>Licenses are tied to hardware fingerprints for security. Contact support for license transfers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What happens if I lose my license key?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Don't worry! We can help you recover your license:</p>
+                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                                <li>Contact our support team with your original purchase email</li>
+                                <li>Provide your name and company information used during purchase</li>
+                                <li>We'll verify your identity and resend the license key</li>
+                                <li>For security, we may ask for additional verification</li>
+                            </ul>
+                            <p>License recovery typically takes 1-2 business days.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>How do I troubleshoot camera connection issues?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Common camera issues and solutions:</p>
+                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                                <li><strong>Camera not detected:</strong> Check USB connections, try different ports</li>
+                                <li><strong>Poor video quality:</strong> Verify camera drivers are up to date</li>
+                                <li><strong>IP camera issues:</strong> Check network settings and firewall rules</li>
+                                <li><strong>Multiple cameras:</strong> Ensure each camera has unique identifiers</li>
+                                <li><strong>Frame rate issues:</strong> Adjust resolution settings in camera preferences</li>
+                            </ul>
+                            <p>Use our built-in Camera Diagnostic Tool for automated troubleshooting.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>Can I use ShipSight for multiple warehouse locations?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes! ShipSight supports multi-location setups:</p>
+                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                                <li><strong>Individual licenses:</strong> Each workstation needs its own license</li>
+                                <li><strong>Centralized management:</strong> Monitor all locations from a single dashboard</li>
+                                <li><strong>Location tagging:</strong> Videos are automatically tagged with location data</li>
+                                <li><strong>Cloud sync:</strong> All recordings sync to centralized cloud storage</li>
+                                <li><strong>Enterprise plans:</strong> Volume discounts available for 10+ licenses</li>
+                            </ul>
+                            <p>Contact our sales team for multi-location deployment assistance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact-form" class="section">
+        <div class="container">
+            <div class="text-center mb-4 animate-on-scroll">
+                <h2>Contact Support</h2>
+                <p>Can't find the answer you're looking for? Get in touch with our expert support team.</p>
+            </div>
+            
+            <div class="contact-form animate-on-scroll">
+                <form id="support-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Issue Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="installation">Installation & Setup</option>
+                                <option value="licensing">License & Activation</option>
+                                <option value="camera">Camera Configuration</option>
+                                <option value="integration">Platform Integration</option>
+                                <option value="technical">Technical Issues</option>
+                                <option value="billing">Billing & Payments</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="priority">Priority</label>
+                            <select id="priority" name="priority">
+                                <option value="low">Low - General inquiry</option>
+                                <option value="medium" selected>Medium - Standard support</option>
+                                <option value="high">High - Business impacting</option>
+                                <option value="urgent">Urgent - Critical issue</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" placeholder="Brief description of your issue" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Detailed Description *</label>
+                        <textarea id="message" name="message" placeholder="Please provide as much detail as possible about your issue, including any error messages and steps you've already tried." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="license-key">License Key (if applicable)</label>
+                        <input type="text" id="license-key" name="license-key" placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Submit Support Request
+                    </button>
+                </form>
+                
+                <div class="text-center mt-3" style="color: var(--text-secondary); font-size: 0.9rem;">
+                    <p><i class="fas fa-clock"></i> Average response time: 2-4 hours during business hours</p>
+                    <p><i class="fas fa-shield-alt"></i> Your information is kept confidential and secure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Response Time Info -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h2>Support Response Times</h2>
+                <p>We're committed to providing fast, helpful support when you need it most.</p>
+            </div>
+            
+            <div class="grid grid-4 mt-3">
+                <div class="text-center animate-on-scroll">
+                    <div class="priority-badge priority-low">Low Priority</div>
+                    <h4>24-48 Hours</h4>
+                    <p>General questions and feature requests</p>
+                </div>
+                <div class="text-center animate-on-scroll">
+                    <div class="priority-badge priority-medium">Medium Priority</div>
+                    <h4>4-8 Hours</h4>
+                    <p>Technical issues and configuration help</p>
+                </div>
+                <div class="text-center animate-on-scroll">
+                    <div class="priority-badge priority-high">High Priority</div>
+                    <h4>1-2 Hours</h4>
+                    <p>Business-impacting problems</p>
+                </div>
+                <div class="text-center animate-on-scroll">
+                    <div class="priority-badge priority-high">Urgent</div>
+                    <h4>30 Minutes</h4>
+                    <p>Critical system failures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Chat Button -->
+    <button class="live-chat" onclick="openLiveChat()">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer style="background: var(--secondary-bg); padding: 3rem 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h3>ShipSight</h3>
+                    <p>Revolutionary barcode-linked video management system for ecommerce security.</p>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="features.html" style="color: var(--text-secondary); text-decoration: none;">Features</a></li>
+                        <li><a href="download.html" style="color: var(--text-secondary); text-decoration: none;">Download</a></li>
+                        <li><a href="how-to-use.html" style="color: var(--text-secondary); text-decoration: none;">How It Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="support.html" style="color: var(--text-secondary); text-decoration: none;">Help Center</a></li>
+                        <li><a href="contact.html" style="color: var(--text-secondary); text-decoration: none;">Contact</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted);">&copy; 2024 ShipSight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Search functionality
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    if (searchTerm && question.includes(searchTerm)) {
+                        item.classList.add('active');
+                        item.querySelector('.faq-answer').style.maxHeight = item.querySelector('.faq-answer').scrollHeight + 'px';
+                    }
+                } else {
+                    item.style.display = searchTerm ? 'none' : 'block';
+                }
+            });
+        });
+        
+        // Support form handling
+        document.getElementById('support-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Simulate form submission
+            showNotification('Support request submitted successfully! We\'ll get back to you soon.', 'success');
+            this.reset();
+        });
+        
+        function openLiveChat() {
+            showNotification('Live chat opening... Please wait while we connect you with a support agent.', 'info');
+            // In a real application, this would open a live chat widget
+        }
+    </script>
+</body>
+</html>
