@@ -614,16 +614,53 @@ p {
 }
 
 .feature-card .feature-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: var(--border-radius-sm);
+  width: 72px;
+  height: 72px;
+  border-radius: var(--border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  font-size: 1.5rem;
-  color: white;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-icon.gradient-blue {
+  background: var(--gradient-blue);
+}
+
+.feature-icon.gradient-purple {
+  background: var(--gradient-purple);
+}
+
+.feature-icon.gradient-green {
+  background: var(--gradient-green);
+}
+
+.feature-icon.gradient-orange {
+  background: var(--gradient-orange);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(0, 122, 255, 0.3);
+}
+
+.feature-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.feature-card:hover .feature-icon::before {
+  opacity: 1;
 }
 
 .feature-card h3 {
