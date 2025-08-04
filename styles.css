@@ -170,52 +170,58 @@ p {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(12, 14, 22, 0.95);
+  background: rgba(16, 19, 28, 0.95);
   backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border-color);
-  padding: 1.25rem 0;
+  padding: var(--space-lg) 0;
   transition: var(--transition);
-}
-
-.nav-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  height: var(--site-header-height);
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
+.nav-container {
+  max-width: var(--breakpoints-ml);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .logo {
-  font-size: 1.75rem;
+  font-family: var(--font-family-heading);
+  font-size: var(--fluid-20-24);
   font-weight: 700;
   color: var(--text-primary);
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--space-sm);
 }
 
 .logo i {
-  color: var(--accent-blue);
-  font-size: 1.5rem;
+  color: var(--color-primary-01);
+  font-size: var(--fluid-18-20);
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2.5rem;
+  gap: var(--space-xl);
   align-items: center;
 }
 
 .nav-links a {
+  font-family: var(--font-family-body);
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: var(--fluid-16-18);
   transition: var(--transition);
   position: relative;
-  padding: 0.5rem 0;
+  padding: var(--space-sm) 0;
 }
 
 .nav-links a:hover {
@@ -229,7 +235,7 @@ p {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent-blue);
+  background: var(--color-primary-01);
   transition: var(--transition);
   border-radius: 1px;
 }
