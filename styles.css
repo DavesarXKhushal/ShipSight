@@ -215,21 +215,20 @@ p {
   background-clip: text;
 }
 
-/* Apple-Style Navigation */
+/* Modern Devin-Style Navigation */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(28, 28, 30, 0.8);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: var(--space-md) 0;
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  height: auto;
-  min-height: 60px;
+  background: rgba(16, 19, 28, 0.95);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 64px;
   display: flex;
   align-items: center;
 }
