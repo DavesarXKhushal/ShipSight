@@ -85,26 +85,36 @@
   --fluid-32-48: clamp(2rem, 1.6rem + 2vw, 3rem);
   --fluid-48-64: clamp(3rem, 2.5rem + 2.5vw, 4rem);
 
+  /* Apple-Style Gradients */
+  --gradient-blue: linear-gradient(135deg, var(--color-blue) 0%, var(--color-teal) 100%);
+  --gradient-purple: linear-gradient(135deg, var(--color-purple) 0%, var(--color-pink) 100%);
+  --gradient-orange: linear-gradient(135deg, var(--color-orange) 0%, var(--color-pink) 100%);
+  --gradient-green: linear-gradient(135deg, var(--color-success) 0%, var(--color-mint) 100%);
+  --gradient-text: linear-gradient(135deg, var(--color-blue) 0%, var(--color-purple) 50%, var(--color-pink) 100%);
+  --gradient-text-alt: linear-gradient(135deg, var(--color-teal) 0%, var(--color-blue) 100%);
+  --gradient-background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 100%);
+
   /* Legacy mappings for existing code */
   --primary-bg: var(--body-background-color);
-  --secondary-bg: #151924;
-  --card-bg: #1a1f2e;
-  --border-color: #2a3441;
+  --secondary-bg: var(--color-dark-2);
+  --card-bg: var(--color-dark-3);
+  --border-color: var(--color-dark-4);
   --text-primary: var(--color-white);
-  --text-secondary: var(--color-gray);
-  --text-muted: #64748b;
-  --accent-blue: var(--color-primary-01);
-  --accent-green: var(--color-primary-03);
-  --accent-purple: var(--color-primary);
-  --gradient-primary: linear-gradient(135deg, var(--color-primary-01) 0%, var(--color-primary) 100%);
-  --gradient-secondary: linear-gradient(135deg, var(--color-primary-03) 0%, var(--color-primary-02) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 100%);
-  --shadow-lg: 0 25px 50px rgba(70, 145, 229, 0.15);
-  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.25);
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --text-secondary: var(--color-gray-2);
+  --text-muted: var(--color-gray-5);
+  --accent-blue: var(--color-blue);
+  --accent-green: var(--color-success);
+  --accent-purple: var(--color-purple);
+  --gradient-primary: var(--gradient-blue);
+  --gradient-secondary: var(--gradient-green);
+  --gradient-accent: var(--gradient-purple);
+  --shadow-lg: 0 25px 50px rgba(0, 122, 255, 0.15);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.15);
   --border-radius: 16px;
-  --border-radius-sm: 8px;
-  --transition: all 0.3s var(--fast-start-easing);
+  --border-radius-sm: 12px;
+  --border-radius-xs: 8px;
+  --transition: all 0.4s var(--fast-start-easing);
 }
 
 * {
