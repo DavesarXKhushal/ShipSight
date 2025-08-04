@@ -4,8 +4,8 @@
   --actual-vh: 1vh;
   --vh: var(--actual-vh);
   --body-font-size: var(--fluid-16-18);
-  --font-family-heading: "neue-haas-grotesk-display", sans-serif;
-  --font-family-body: "neue-haas-grotesk-text", sans-serif;
+  --font-family-heading: "Poppins", sans-serif;
+  --font-family-body: "Poppins", sans-serif;
   --body-background-color: #10131c;
   --body-text-color: var(--color-white);
   --body-line-height: 1.5;
