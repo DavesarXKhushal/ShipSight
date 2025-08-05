@@ -271,15 +271,12 @@ p {
 
 /* Active state for current page */
 .nav-links a.active {
-  background: linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #1e40af 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-accent);
 }
 
 .nav-links a.active::after {
   width: 90%;
-  background: linear-gradient(90deg, #3b82f6, #1e40af);
+  background: var(--color-accent);
 }
 
 .navbar::before {
