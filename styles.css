@@ -993,12 +993,14 @@ p {
 
 /* CTA Section */
 .cta-section {
-  background: var(--secondary-bg);
+  background: var(--gradient-section);
   text-align: center;
   backdrop-filter: blur(20px);
   padding: 8rem 0;
   margin: 4rem 0;
   position: relative;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
 }
 
 .cta-section::before {
@@ -1008,7 +1010,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at center, rgba(79, 70, 229, 0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, rgba(79, 70, 229, 0.08) 50%, transparent 80%);
   pointer-events: none;
 }
 
