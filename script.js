@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallaxEffect();
     initFAQAccordion();
     initContactForm();
+    initCompanyLogos();
 });
 
 // Enhanced navigation with hover animations
