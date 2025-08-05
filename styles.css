@@ -954,11 +954,10 @@ p {
   max-height: 44px;
 }
 
-.platform-logo.amazon { background: var(--color-orange); }
-.platform-logo.flipkart { background: var(--color-blue); }
-.platform-logo.myntra { background: var(--color-pink); }
-.platform-logo.ajio { background: var(--color-success); }
-.platform-logo.other { background: var(--color-accent); }
+.platform-logo.other {
+  background: var(--color-accent);
+  color: white;
+}
 
 .platform-item span {
   font-weight: 600;
