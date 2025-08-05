@@ -161,14 +161,18 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Typography with solid colors */
+/* Typography with enhanced gradients */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-heading);
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: var(--space-lg);
   letter-spacing: -0.03em;
-  color: var(--color-heading);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 240, 255, 0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
 }
 
 h1 {
@@ -213,25 +217,44 @@ h6 {
 }
 
 p {
-  color: var(--color-text-secondary);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(200, 220, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: var(--space-lg);
   font-size: var(--fluid-16-18);
   line-height: 1.6;
   font-weight: 400;
   text-align: center;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
-/* Brand gradient - ONLY for brand name */
+/* Enhanced text gradient */
 .gradient-text {
-  background: var(--gradient-brand);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 30%, #60a5fa 60%, #1e40af 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+  animation: textGlow 3s ease-in-out infinite;
 }
 
-/* Remove gradients from other text - use solid colors */
+@keyframes textGlow {
+  0%, 100% {
+    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.6));
+  }
+}
+
+/* Alternative gradient text */
 .gradient-text-alt {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(200, 220, 255, 0.8) 50%, rgba(160, 180, 220, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 /* Enhanced Dark Navigation */
@@ -553,12 +576,16 @@ p {
 
 .hero-description {
   font-size: var(--fluid-18-20);
-  color: var(--color-text-secondary);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(200, 220, 255, 0.75) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 2.5rem;
   line-height: 1.6;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 .hero-buttons {
@@ -1216,6 +1243,15 @@ p {
   .footer-links {
     justify-content: space-between;
   }
+
+  .company-logos {
+    grid-column: span 1;
+  }
+
+  .logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1305,6 +1341,25 @@ p {
   .footer-links {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .company-logo {
+    padding: 0.75rem;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .logo-name {
+    font-size: 0.8rem;
   }
 }
 
