@@ -98,8 +98,10 @@
   --color-accent: #4f46e5;
   --color-accent-hover: #6366f1;
 
-  /* Dark Background */
-  --gradient-background: linear-gradient(-45deg, #0d0d0d 0%, #1a1a1a 25%, #0f0f0f 50%, #121212 75%, #0d0d0d 100%);
+  /* Enhanced Dark Gradient Background */
+  --gradient-background: linear-gradient(-45deg, #0a0a0a 0%, #1a1a2e 15%, #16213e 30%, #0f0f23 45%, #1a1a2e 60%, #0f0f23 75%, #16213e 90%, #0a0a0a 100%);
+  --gradient-section: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 46, 0.9) 50%, rgba(10, 10, 10, 0.95) 100%);
+  --gradient-text-bright: linear-gradient(135deg, #ffffff 0%, #e0e6ff 25%, #c7d2fe 50%, #a5b4fc 75%, #8b5cf6 100%);
 
   /* Glassmorphism Colors */
   --glass-bg: rgba(255, 255, 255, 0.06);
