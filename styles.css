@@ -629,6 +629,11 @@ p {
   position: relative;
 }
 
+.section:nth-child(even) {
+  background: var(--gradient-section);
+  backdrop-filter: blur(10px);
+}
+
 /* Hero Section - Centered and Beautiful */
 .hero-section {
   min-height: 100vh;
