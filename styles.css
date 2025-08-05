@@ -1024,7 +1024,9 @@ p {
   color: var(--color-text-secondary);
   margin: 0 0 2rem 0;
   text-align: left;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: var(--fluid-16-18);
+  max-width: 350px;
 }
 
 .footer-links {
