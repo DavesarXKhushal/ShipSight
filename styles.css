@@ -142,8 +142,8 @@
 body {
   font-family: var(--font-family-body);
   background: var(--gradient-background);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
   color: var(--body-text-color);
   line-height: var(--body-line-height);
   font-size: var(--body-font-size);
