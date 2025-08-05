@@ -11,12 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initFAQAccordion();
     initContactForm();
     initCompanyLogos();
+    initActiveNavigation();
 });
 
 // Enhanced navigation with hover animations
 function initNavigation() {
     const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('.nav-links a:not(.dropdown-toggle)');
 
     // Scroll effect
     window.addEventListener('scroll', () => {
@@ -27,46 +28,52 @@ function initNavigation() {
         }
     });
 
-    // Enhanced hover animations for nav links
+    // Enhanced hover animations for nav links (excluding dropdown toggles)
     navLinks.forEach(link => {
         link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.05)';
-            this.style.textShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+            if (window.innerWidth > 768) {
+                this.style.transform = 'translateY(-2px) scale(1.05)';
+                this.style.textShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+            }
         });
 
         link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.textShadow = 'none';
+            if (window.innerWidth > 768) {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.textShadow = 'none';
+            }
         });
 
         // Ripple effect on click
         link.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
+            if (!this.classList.contains('dropdown-toggle')) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
 
-            ripple.style.cssText = `
-                position: absolute;
-                width: ${size}px;
-                height: ${size}px;
-                left: ${x}px;
-                top: ${y}px;
-                background: rgba(59, 130, 246, 0.3);
-                border-radius: 50%;
-                transform: scale(0);
-                animation: ripple 0.6s linear;
-                pointer-events: none;
-                z-index: 0;
-            `;
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(59, 130, 246, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                    z-index: 0;
+                `;
 
-            this.style.position = 'relative';
-            this.appendChild(ripple);
+                this.style.position = 'relative';
+                this.appendChild(ripple);
 
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            }
         });
     });
 
@@ -141,6 +148,7 @@ function initMobileMenu() {
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
     if (mobileToggle && navLinks) {
         mobileToggle.addEventListener('click', () => {
@@ -155,9 +163,32 @@ function initMobileMenu() {
             }
         });
 
-        // Close menu when clicking on links
+        // Handle mobile dropdown toggles
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const dropdown = toggle.parentElement.querySelector('.dropdown-menu');
+                    const isActive = dropdown.classList.contains('active');
+
+                    // Close all other dropdowns
+                    document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
+                        menu.classList.remove('active');
+                    });
+
+                    // Toggle current dropdown
+                    if (!isActive) {
+                        dropdown.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Close menu when clicking on non-dropdown links
         navLinks.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
+            if (e.target.tagName === 'A' && !e.target.classList.contains('dropdown-toggle')) {
                 navLinks.classList.remove('active');
                 mobileToggle.classList.remove('active');
                 body.style.overflow = '';
@@ -166,13 +197,31 @@ function initMobileMenu() {
 
         // Close menu on escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                mobileToggle.classList.remove('active');
-                body.style.overflow = '';
+            if (e.key === 'Escape') {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                    body.style.overflow = '';
+                }
+                // Close all dropdowns
+                document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
+                    menu.classList.remove('active');
+                });
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
+                    menu.classList.remove('active');
+                });
             }
         });
     }
+
+    // Handle desktop dropdowns
+    initDesktopDropdowns();
 }
 
 // Typing effect for hero section
