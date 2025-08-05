@@ -28,49 +28,87 @@
         }
         
         .step-navigation {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.3);
             border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
             position: sticky;
             top: 100px;
             z-index: 100;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.1);
         }
-        
+
+        .step-navigation h3 {
+            color: white;
+            font-size: var(--fluid-24-32);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e6ff 25%, #c7d2fe 50%, #a5b4fc 75%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .step-nav-list {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             list-style: none;
             padding: 0;
             margin: 0;
-            gap: 1rem;
+            justify-items: center;
         }
-        
+
         .step-nav-item {
-            flex: 1;
-            min-width: 200px;
+            width: 100%;
+            max-width: 300px;
         }
-        
+
         .step-nav-link {
-            display: block;
-            padding: 0.75rem 1rem;
-            background: var(--secondary-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem 1.5rem;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(15, 15, 35, 0.9) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            color: var(--color-text-primary);
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             text-align: center;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
+            min-height: 60px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .step-nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .step-nav-link:hover::before {
+            left: 100%;
+        }
+
         .step-nav-link:hover,
         .step-nav-link.active {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.8) 0%, rgba(79, 70, 229, 0.8) 100%);
             color: white;
-            border-color: transparent;
-            transform: translateY(-2px);
+            border-color: rgba(139, 92, 246, 0.6);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
         }
         
         .tutorial-step {
