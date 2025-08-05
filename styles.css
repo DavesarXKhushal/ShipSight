@@ -1128,10 +1128,11 @@ p {
 .mobile-menu-toggle span {
   width: 24px;
   height: 2px;
-  background: var(--color-text-primary);
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
   margin: 2px 0;
   transition: var(--transition);
   border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.3);
 }
 
 .mobile-menu-toggle.active span:nth-child(1) {
