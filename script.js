@@ -392,3 +392,46 @@ function initLazyLoading() {
 
 // Call lazy loading when DOM is ready
 document.addEventListener('DOMContentLoaded', initLazyLoading);
+
+// Company logos animation
+function initCompanyLogos() {
+    const companyLogos = document.querySelectorAll('.company-logo');
+
+    companyLogos.forEach((logo, index) => {
+        // Staggered animation on load
+        logo.style.opacity = '0';
+        logo.style.transform = 'translateY(20px)';
+
+        setTimeout(() => {
+            logo.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            logo.style.opacity = '1';
+            logo.style.transform = 'translateY(0)';
+        }, index * 100);
+
+        // Enhanced hover effect
+        logo.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.1) rotate(2deg)';
+            this.style.filter = 'brightness(1.2)';
+
+            // Glow effect
+            const logoIcon = this.querySelector('.logo-icon');
+            logoIcon.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.4), 0 0 20px rgba(59, 130, 246, 0.2)';
+        });
+
+        logo.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+            this.style.filter = 'brightness(1)';
+
+            const logoIcon = this.querySelector('.logo-icon');
+            logoIcon.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+        });
+
+        // Click animation
+        logo.addEventListener('click', function() {
+            this.style.transform = 'translateY(-4px) scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-8px) scale(1.1) rotate(2deg)';
+            }, 150);
+        });
+    });
+}
