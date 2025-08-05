@@ -959,6 +959,20 @@ p {
   background: var(--secondary-bg);
   text-align: center;
   backdrop-filter: blur(20px);
+  padding: 8rem 0;
+  margin: 4rem 0;
+  position: relative;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(79, 70, 229, 0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .cta-content h2 {
