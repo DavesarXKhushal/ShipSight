@@ -402,12 +402,8 @@ p {
 }
 
 .nav-links a:hover {
-  background: linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #1e40af 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-accent);
   transform: translateY(-2px) scale(1.05);
-  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
 }
 
 .nav-links a:hover::before {
