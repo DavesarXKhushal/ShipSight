@@ -161,18 +161,14 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Typography with enhanced gradients */
+/* Clean Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-heading);
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: var(--space-lg);
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 240, 255, 0.85) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+  color: var(--color-heading);
 }
 
 h1 {
