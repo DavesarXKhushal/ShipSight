@@ -2116,63 +2116,123 @@ p {
     font-size: 0.8rem;
   }
 
-  /* VMS Section Mobile Styles */
-  .vms-guarantee {
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-    padding: 2rem;
+  /* Enhanced VMS Section Mobile Styles */
+  .vms-section {
+    padding: 4rem 0;
   }
 
-  .guarantee-icon {
-    width: 60px;
-    height: 60px;
+  .vms-container {
+    padding: 0 1.5rem;
+  }
+
+  .vms-header {
+    margin-bottom: 4rem;
+  }
+
+  .vms-badge {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .vms-title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .vms-subtitle {
+    font-size: var(--fluid-16-18);
+    padding: 0 1rem;
+  }
+
+  .vms-platform-guarantee {
+    margin-bottom: 4rem;
+  }
+
+  .platform-guarantee-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+  }
+
+  .platform-guarantee-icon {
+    width: 70px;
+    height: 70px;
     margin: 0 auto;
   }
 
-  .guarantee-icon i {
-    font-size: 1.5rem;
+  .platform-guarantee-icon i {
+    font-size: 2rem;
   }
 
-  .guarantee-text h3 {
+  .platform-guarantee-title {
     text-align: center;
+    font-size: var(--fluid-20-24);
+    margin-bottom: 1rem;
+  }
+
+  .platform-guarantee-description {
+    text-align: center;
+    font-size: var(--fluid-16-18);
+    margin-bottom: 1.5rem;
+  }
+
+  .marketplace-list {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .marketplace-item {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .vms-benefits-wrapper {
+    margin-bottom: 4rem;
+  }
+
+  .vms-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .vms-benefit-card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .benefit-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+  }
+
+  .benefit-icon i {
+    font-size: 1.8rem;
+  }
+
+  .benefit-title {
     font-size: var(--fluid-18-20);
+    margin-bottom: 0.8rem;
   }
 
-  .guarantee-text p {
-    text-align: center;
+  .benefit-description {
     font-size: var(--fluid-16-18);
   }
 
-  .vms-features-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 2.5rem 0;
-  }
-
-  .vms-feature-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .vms-feature-icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .vms-feature-icon i {
-    font-size: 1.5rem;
-  }
-
-  .vms-cta-btn {
-    padding: 1rem 2rem;
+  .vms-cta-button {
+    padding: 1.2rem 2.5rem;
     font-size: 1rem;
+    gap: 0.8rem;
+    border-radius: 14px;
     width: 100%;
     max-width: 350px;
   }
 
-  .vms-intro {
-    font-size: var(--fluid-16-18) !important;
-    margin-bottom: 2rem !important;
+  .cta-arrow {
+    display: none;
   }
 }
 
