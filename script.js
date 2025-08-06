@@ -543,3 +543,132 @@ window.addEventListener('resize', debounce(() => {
         });
     }
 }, 250));
+
+// Enhanced marketplace showcase animations
+function initMarketplaceAnimations() {
+    const marketplaceBoxes = document.querySelectorAll('.floating-marketplace-box');
+    const marketplaceSection = document.querySelector('.marketplace-showcase-section');
+
+    if (!marketplaceSection) return;
+
+    // Enhanced intersection observer for marketplace section
+    const marketplaceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Trigger sequential animation for marketplace boxes
+                marketplaceBoxes.forEach((box, index) => {
+                    setTimeout(() => {
+                        box.style.opacity = '1';
+                        box.style.transform = 'scale(1)';
+                        box.classList.add('animate-in');
+                    }, index * 100);
+                });
+
+                // Add stats animation
+                const stats = document.querySelectorAll('.marketplace-stats .stat-number');
+                stats.forEach((stat, index) => {
+                    setTimeout(() => {
+                        animateCounter(stat);
+                    }, 1000 + (index * 200));
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    marketplaceObserver.observe(marketplaceSection);
+
+    // Interactive hover effects for marketplace boxes
+    marketplaceBoxes.forEach(box => {
+        box.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.1)';
+            this.style.zIndex = '20';
+
+            // Add subtle shake animation
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = `floatAndShimmer ${this.style.getPropertyValue('--duration')} ease-in-out infinite, shake 0.5s ease-in-out`;
+            }, 10);
+        });
+
+        box.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.zIndex = '';
+            this.style.animation = `floatAndShimmer ${this.style.getPropertyValue('--duration')} ease-in-out infinite`;
+        });
+    });
+}
+
+// Enhanced VMS section animations
+function initVMSAnimations() {
+    const vmsElements = document.querySelectorAll('.fade-up-animation, .slide-up-animation, .scale-up-animation');
+
+    const vmsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    vmsElements.forEach(element => {
+        vmsObserver.observe(element);
+    });
+
+    // Marketplace list items staggered animation
+    const marketplaceItems = document.querySelectorAll('.marketplace-item');
+    marketplaceItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+            this.style.boxShadow = '0 12px 25px rgba(139, 92, 246, 0.3)';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-2px) scale(1)';
+            this.style.boxShadow = '0 8px 20px rgba(139, 92, 246, 0.2)';
+        });
+    });
+
+    // VMS benefit cards enhanced interaction
+    const benefitCards = document.querySelectorAll('.vms-benefit-card');
+    benefitCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            // Add ripple effect
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple-effect');
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+}
+
+// Enhanced counter animation function for marketplace stats
+function animateMarketplaceCounter(element) {
+    const target = parseInt(element.textContent.replace(/\D/g, ''));
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+
+        // Preserve the "+" sign for numbers like "17+"
+        const originalText = element.textContent;
+        const hasPlus = originalText.includes('+');
+        const hasPercent = originalText.includes('%');
+
+        if (hasPlus) {
+            element.textContent = Math.floor(current) + '+';
+        } else if (hasPercent) {
+            element.textContent = Math.floor(current) + '%';
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+}
