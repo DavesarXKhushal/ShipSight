@@ -931,22 +931,24 @@ p {
   text-align: center;
 }
 
-/* Enhanced VMS Section */
+/* Enhanced VMS Section with Dynamic Animations */
 .vms-section {
   position: relative;
   padding: 8rem 0;
   background: linear-gradient(
     135deg,
-    rgba(10, 10, 10, 0.95) 0%,
-    rgba(26, 26, 46, 0.9) 25%,
-    rgba(16, 21, 35, 0.95) 50%,
-    rgba(15, 15, 35, 0.98) 75%,
-    rgba(10, 10, 10, 0.95) 100%
+    rgba(10, 10, 10, 0.98) 0%,
+    rgba(26, 26, 46, 0.95) 20%,
+    rgba(16, 21, 35, 0.97) 40%,
+    rgba(20, 25, 40, 0.96) 60%,
+    rgba(15, 15, 35, 0.98) 80%,
+    rgba(10, 10, 10, 0.98) 100%
   );
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(139, 92, 246, 0.15);
-  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+  backdrop-filter: blur(25px);
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
   overflow: hidden;
+  animation: sectionBreathe 12s ease-in-out infinite;
 }
 
 .vms-section::before {
@@ -958,42 +960,74 @@ p {
   bottom: 0;
   background: radial-gradient(
     ellipse at center,
-    rgba(139, 92, 246, 0.12) 0%,
-    rgba(79, 70, 229, 0.08) 35%,
-    rgba(59, 130, 246, 0.05) 65%,
-    transparent 85%
+    rgba(139, 92, 246, 0.15) 0%,
+    rgba(79, 70, 229, 0.12) 25%,
+    rgba(59, 130, 246, 0.08) 50%,
+    rgba(139, 92, 246, 0.05) 75%,
+    transparent 90%
   );
   pointer-events: none;
-  animation: pulseGlow 8s ease-in-out infinite;
+  animation: dynamicPulse 10s ease-in-out infinite;
 }
 
 .vms-section::after {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
-    rgba(139, 92, 246, 0.05) 90deg,
+    rgba(139, 92, 246, 0.08) 45deg,
+    transparent 90deg,
+    rgba(79, 70, 229, 0.06) 135deg,
     transparent 180deg,
-    rgba(79, 70, 229, 0.03) 270deg,
+    rgba(59, 130, 246, 0.04) 225deg,
+    transparent 270deg,
+    rgba(139, 92, 246, 0.05) 315deg,
     transparent 360deg
   );
-  animation: rotateBackground 40s linear infinite;
+  animation: spiralRotate 60s linear infinite;
   pointer-events: none;
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+@keyframes sectionBreathe {
+  0%, 100% {
+    background-size: 100% 100%;
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    background-size: 110% 110%;
+    border-color: rgba(139, 92, 246, 0.4);
+  }
 }
 
-@keyframes rotateBackground {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes dynamicPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  33% {
+    opacity: 0.9;
+    transform: scale(1.08) rotate(2deg);
+    filter: hue-rotate(15deg);
+  }
+  66% {
+    opacity: 0.7;
+    transform: scale(1.05) rotate(-1deg);
+    filter: hue-rotate(-10deg);
+  }
+}
+
+@keyframes spiralRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.05); }
+  50% { transform: rotate(180deg) scale(1); }
+  75% { transform: rotate(270deg) scale(1.03); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 
 .vms-container {
