@@ -694,30 +694,54 @@ function initVMSAnimations() {
     // VMS benefit cards enhanced interaction
     const benefitCards = document.querySelectorAll('.vms-benefit-card');
     benefitCards.forEach((card, index) => {
-        card.addEventListener('mouseenter', function() {
-            // Add ripple effect
-            const ripple = document.createElement('div');
-            ripple.classList.add('ripple-effect');
-            this.appendChild(ripple);
+        // Add click functionality for mobile
+        card.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
 
-            // Enhanced hover transform
-            this.style.transform = 'translateY(-20px) scale(1.05) rotate(1deg)';
+        card.addEventListener('mouseenter', function() {
+            // Add floating particles effect
+            createFloatingParticles(this);
+
+            // Enhanced hover transform with 3D effect
+            this.style.transform = 'translateY(-20px) scale(1.05) rotateX(5deg) rotateY(2deg)';
             this.style.boxShadow = `
-                0 30px 60px rgba(79, 70, 229, 0.3),
+                0 35px 70px rgba(79, 70, 229, 0.3),
                 0 20px 40px rgba(139, 92, 246, 0.2),
-                0 0 30px rgba(139, 92, 246, 0.1)
+                0 0 30px rgba(139, 92, 246, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1)
             `;
 
-            setTimeout(() => {
-                if (ripple.parentNode) {
-                    ripple.remove();
-                }
-            }, 600);
+            // Animate icon
+            const icon = this.querySelector('.benefit-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.2) rotate(10deg) translateY(-5px)';
+                icon.style.filter = 'brightness(1.2) saturate(120%)';
+            }
+
+            // Glow effect
+            const glowElement = this.querySelector('.card-glow-effect');
+            if (glowElement) {
+                glowElement.style.opacity = '1';
+            }
         });
 
         card.addEventListener('mouseleave', function() {
             this.style.transform = '';
             this.style.boxShadow = '';
+
+            // Reset icon
+            const icon = this.querySelector('.benefit-icon');
+            if (icon) {
+                icon.style.transform = '';
+                icon.style.filter = '';
+            }
+
+            // Hide glow
+            const glowElement = this.querySelector('.card-glow-effect');
+            if (glowElement) {
+                glowElement.style.opacity = '0';
+            }
         });
     });
 }
