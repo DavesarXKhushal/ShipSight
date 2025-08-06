@@ -1428,11 +1428,12 @@ p {
   opacity: 1;
 }
 
-/* Enhanced Animations */
+/* Enhanced Animations with Performance Optimizations */
 .fade-up-animation {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .fade-up-animation.animated {
