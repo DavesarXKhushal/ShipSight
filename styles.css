@@ -23,14 +23,14 @@
   --container-padding: 20px;
   --gutter: 10px;
 
-  /* Enhanced Color System */
+  /* Enhanced Color System - Evolution Theme */
   --color-error: #ff3b30;
   --color-white: #ffffff;
   --color-black: #000000;
   --color-orange: #ff9500;
-  --color-primary: #4f46e5;
-  --color-success: #34c759;
-  --color-warning: #ff9500;
+  --color-primary: #6366f1;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
   --color-purple: #8b5cf6;
   --color-pink: #ec4899;
   --color-indigo: #6366f1;
