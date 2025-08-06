@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initCompanyLogos();
     initActiveNavigation();
+    initMarketplaceAnimations();
+    initVMSAnimations();
 });
 
 // Enhanced navigation with hover animations
