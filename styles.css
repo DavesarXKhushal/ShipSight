@@ -1628,6 +1628,7 @@ p {
   animation-delay: var(--delay, 0s);
   transform-origin: center;
   box-shadow: 0 8px 25px rgba(79, 70, 229, 0.1);
+  will-change: transform, box-shadow, border-color;
 }
 
 .floating-marketplace-box:nth-child(1) { top: 10%; left: 5%; }
