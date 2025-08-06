@@ -2027,13 +2027,38 @@ p {
 
 .marketplace-name {
   font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  letter-spacing: 0.5px;
+  font-weight: 800;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(139, 92, 246, 0.8) 50%,
+    rgba(255, 255, 255, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   position: relative;
   z-index: 2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+  animation: textShine 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+}
+
+@keyframes textShine {
+  0%, 100% {
+    background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(139, 92, 246, 0.8) 50%,
+      rgba(255, 255, 255, 0.9) 100%);
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+  }
+  50% {
+    background: linear-gradient(135deg,
+      rgba(139, 92, 246, 0.9) 0%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(79, 70, 229, 0.8) 100%);
+    filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.8));
+  }
 }
 
 .marketplace-glow {
