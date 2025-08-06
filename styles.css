@@ -1617,6 +1617,12 @@ p {
   animation: fadeUpBounce 0.8s ease-out;
 }
 
+/* Enhanced marketplace item animations */
+.marketplace-item {
+  animation: marketplaceItemPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: calc(var(--animation-delay, 0) * 0.1s);
+}
+
 .slide-up-animation {
   opacity: 0;
   transform: translateY(60px) scale(0.9);
