@@ -2,6 +2,9 @@
 
 // DOM ready function
 document.addEventListener('DOMContentLoaded', function() {
+    // Force a reflow to ensure all elements are properly rendered
+    document.body.offsetHeight;
+
     initNavigation();
     initScrollAnimations();
     initSmoothScrolling();
@@ -12,8 +15,21 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initCompanyLogos();
     initActiveNavigation();
-    initMarketplaceAnimations();
-    initVMSAnimations();
+
+    // Initialize VMS and marketplace animations with a small delay
+    setTimeout(() => {
+        initVMSAnimations();
+        initMarketplaceAnimations();
+
+        // Trigger initial visibility for floating boxes
+        const floatingBoxes = document.querySelectorAll('.floating-marketplace-box');
+        floatingBoxes.forEach((box, index) => {
+            setTimeout(() => {
+                box.style.opacity = '0.9';
+                box.style.transform = 'scale(1) translateY(0)';
+            }, index * 50);
+        });
+    }, 100);
 });
 
 // Enhanced navigation with hover animations
