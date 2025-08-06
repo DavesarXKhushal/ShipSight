@@ -2142,6 +2142,15 @@ p {
   text-align: center;
 }
 
+/* Alternative VMS grid layout for other pages */
+.vms-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .vms-guarantee {
@@ -2159,6 +2168,11 @@ p {
   }
 
   .vms-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .vms-benefits-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
