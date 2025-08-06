@@ -1592,6 +1592,21 @@ p {
   }
 }
 
+@keyframes marketplaceItemPop {
+  0% {
+    transform: translateY(20px) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-5px) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
 .scale-up-animation[data-delay="0.1s"] { transition-delay: 0.1s; }
 .scale-up-animation[data-delay="0.2s"] { transition-delay: 0.2s; }
 .scale-up-animation[data-delay="0.3s"] { transition-delay: 0.3s; }
