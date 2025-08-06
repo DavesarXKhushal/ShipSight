@@ -635,41 +635,73 @@ function initVMSAnimations() {
     const vmsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
+                // Add delay based on element index
+                const elements = Array.from(document.querySelectorAll('.fade-up-animation, .slide-up-animation, .scale-up-animation'));
+                const elementIndex = elements.indexOf(entry.target);
+
+                setTimeout(() => {
+                    entry.target.classList.add('animated');
+                }, elementIndex * 200);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
     vmsElements.forEach(element => {
         vmsObserver.observe(element);
     });
 
-    // Marketplace list items staggered animation
+    // Enhanced marketplace list items staggered animation
     const marketplaceItems = document.querySelectorAll('.marketplace-item');
     marketplaceItems.forEach((item, index) => {
+        // Initial animation
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0) scale(1)';
+            item.style.animation = 'marketplaceItemPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        }, index * 100);
+
         item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) scale(1.05)';
-            this.style.boxShadow = '0 12px 25px rgba(139, 92, 246, 0.3)';
+            this.style.transform = 'translateY(-5px) scale(1.08) rotate(1deg)';
+            this.style.boxShadow = '0 15px 30px rgba(139, 92, 246, 0.4)';
+            this.style.borderColor = 'rgba(139, 92, 246, 0.6)';
+            this.style.background = 'linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(79, 70, 229, 0.12) 100%)';
         });
 
         item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(-2px) scale(1)';
+            this.style.transform = 'translateY(-2px) scale(1) rotate(0deg)';
             this.style.boxShadow = '0 8px 20px rgba(139, 92, 246, 0.2)';
+            this.style.borderColor = 'rgba(139, 92, 246, 0.2)';
+            this.style.background = 'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(79, 70, 229, 0.08) 100%)';
         });
     });
 
     // VMS benefit cards enhanced interaction
     const benefitCards = document.querySelectorAll('.vms-benefit-card');
-    benefitCards.forEach(card => {
+    benefitCards.forEach((card, index) => {
         card.addEventListener('mouseenter', function() {
             // Add ripple effect
             const ripple = document.createElement('div');
             ripple.classList.add('ripple-effect');
             this.appendChild(ripple);
 
+            // Enhanced hover transform
+            this.style.transform = 'translateY(-20px) scale(1.05) rotate(1deg)';
+            this.style.boxShadow = `
+                0 30px 60px rgba(79, 70, 229, 0.3),
+                0 20px 40px rgba(139, 92, 246, 0.2),
+                0 0 30px rgba(139, 92, 246, 0.1)
+            `;
+
             setTimeout(() => {
-                ripple.remove();
+                if (ripple.parentNode) {
+                    ripple.remove();
+                }
             }, 600);
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
         });
     });
 }
