@@ -1534,22 +1534,24 @@ p {
 .scale-up-animation[data-delay="0.3s"] { transition-delay: 0.3s; }
 .scale-up-animation[data-delay="0.4s"] { transition-delay: 0.4s; }
 
-/* Animated Marketplace Showcase Section */
+/* Dynamic Marketplace Showcase Section */
 .marketplace-showcase-section {
   position: relative;
   padding: 8rem 0;
   background: linear-gradient(
     135deg,
     rgba(15, 15, 25, 0.98) 0%,
-    rgba(30, 40, 60, 0.95) 25%,
-    rgba(20, 25, 40, 0.97) 50%,
-    rgba(25, 30, 45, 0.96) 75%,
+    rgba(30, 40, 60, 0.95) 20%,
+    rgba(20, 25, 40, 0.97) 40%,
+    rgba(25, 30, 45, 0.96) 60%,
+    rgba(30, 35, 50, 0.95) 80%,
     rgba(15, 15, 25, 0.98) 100%
   );
-  backdrop-filter: blur(25px);
-  border-top: 1px solid rgba(79, 70, 229, 0.1);
-  border-bottom: 1px solid rgba(79, 70, 229, 0.1);
+  backdrop-filter: blur(30px);
+  border-top: 2px solid rgba(79, 70, 229, 0.3);
+  border-bottom: 2px solid rgba(79, 70, 229, 0.3);
   overflow: hidden;
+  animation: marketplacePulse 15s ease-in-out infinite;
 }
 
 .marketplace-showcase-section::before {
@@ -1561,18 +1563,81 @@ p {
   bottom: 0;
   background: radial-gradient(
     ellipse at center,
-    rgba(79, 70, 229, 0.08) 0%,
-    rgba(139, 92, 246, 0.05) 35%,
-    rgba(59, 130, 246, 0.03) 65%,
-    transparent 85%
+    rgba(79, 70, 229, 0.12) 0%,
+    rgba(139, 92, 246, 0.08) 25%,
+    rgba(59, 130, 246, 0.06) 50%,
+    rgba(79, 70, 229, 0.04) 75%,
+    transparent 90%
   );
   pointer-events: none;
-  animation: marketplaceGlow 12s ease-in-out infinite;
+  animation: marketplaceDynamicGlow 18s ease-in-out infinite;
 }
 
-@keyframes marketplaceGlow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
+.marketplace-showcase-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(79, 70, 229, 0.06) 60deg,
+    transparent 120deg,
+    rgba(139, 92, 246, 0.04) 180deg,
+    transparent 240deg,
+    rgba(59, 130, 246, 0.05) 300deg,
+    transparent 360deg
+  );
+  animation: marketplaceSpiral 45s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes marketplacePulse {
+  0%, 100% {
+    background-size: 100% 100%;
+    border-color: rgba(79, 70, 229, 0.3);
+  }
+  33% {
+    background-size: 105% 105%;
+    border-color: rgba(139, 92, 246, 0.4);
+  }
+  66% {
+    background-size: 102% 102%;
+    border-color: rgba(59, 130, 246, 0.35);
+  }
+}
+
+@keyframes marketplaceDynamicGlow {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.1) rotate(1deg);
+    filter: hue-rotate(10deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05) rotate(-0.5deg);
+    filter: hue-rotate(20deg);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(1.08) rotate(0.8deg);
+    filter: hue-rotate(-5deg);
+  }
+}
+
+@keyframes marketplaceSpiral {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+  25% { transform: rotate(90deg) scale(1.02); opacity: 0.5; }
+  50% { transform: rotate(180deg) scale(1); opacity: 0.4; }
+  75% { transform: rotate(270deg) scale(1.01); opacity: 0.6; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.3; }
 }
 
 .marketplace-container {
