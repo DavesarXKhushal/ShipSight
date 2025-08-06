@@ -2770,6 +2770,48 @@ p {
   .install-steps {
     grid-template-columns: 1fr;
   }
+
+  /* Contact page responsive */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Features page responsive */
+  .feature-detail {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .feature-detail:nth-child(even) {
+    direction: ltr;
+  }
+
+  .spec-list {
+    grid-template-columns: 1fr;
+  }
+
+  .integration-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  /* Support page responsive */
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-section {
+    padding: 0 1rem;
+  }
 }
 
 .slide-up-animation {
