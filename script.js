@@ -694,30 +694,54 @@ function initVMSAnimations() {
     // VMS benefit cards enhanced interaction
     const benefitCards = document.querySelectorAll('.vms-benefit-card');
     benefitCards.forEach((card, index) => {
-        card.addEventListener('mouseenter', function() {
-            // Add ripple effect
-            const ripple = document.createElement('div');
-            ripple.classList.add('ripple-effect');
-            this.appendChild(ripple);
+        // Add click functionality for mobile
+        card.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
 
-            // Enhanced hover transform
-            this.style.transform = 'translateY(-20px) scale(1.05) rotate(1deg)';
+        card.addEventListener('mouseenter', function() {
+            // Add floating particles effect
+            createFloatingParticles(this);
+
+            // Enhanced hover transform with 3D effect
+            this.style.transform = 'translateY(-20px) scale(1.05) rotateX(5deg) rotateY(2deg)';
             this.style.boxShadow = `
-                0 30px 60px rgba(79, 70, 229, 0.3),
+                0 35px 70px rgba(79, 70, 229, 0.3),
                 0 20px 40px rgba(139, 92, 246, 0.2),
-                0 0 30px rgba(139, 92, 246, 0.1)
+                0 0 30px rgba(139, 92, 246, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1)
             `;
 
-            setTimeout(() => {
-                if (ripple.parentNode) {
-                    ripple.remove();
-                }
-            }, 600);
+            // Animate icon
+            const icon = this.querySelector('.benefit-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.2) rotate(10deg) translateY(-5px)';
+                icon.style.filter = 'brightness(1.2) saturate(120%)';
+            }
+
+            // Glow effect
+            const glowElement = this.querySelector('.card-glow-effect');
+            if (glowElement) {
+                glowElement.style.opacity = '1';
+            }
         });
 
         card.addEventListener('mouseleave', function() {
             this.style.transform = '';
             this.style.boxShadow = '';
+
+            // Reset icon
+            const icon = this.querySelector('.benefit-icon');
+            if (icon) {
+                icon.style.transform = '';
+                icon.style.filter = '';
+            }
+
+            // Hide glow
+            const glowElement = this.querySelector('.card-glow-effect');
+            if (glowElement) {
+                glowElement.style.opacity = '0';
+            }
         });
     });
 }
@@ -750,3 +774,54 @@ function animateMarketplaceCounter(element) {
         }
     }, 16);
 }
+
+// Create floating particles effect for enhanced interactivity
+function createFloatingParticles(element) {
+    const particleCount = 6;
+    const colors = ['#4f46e5', '#8b5cf6', '#3b82f6', '#6366f1'];
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.8;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: particleFloat 2s ease-out forwards;
+        `;
+
+        element.appendChild(particle);
+
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.remove();
+            }
+        }, 2000);
+    }
+}
+
+// Add particle animation keyframes
+const particleStyle = document.createElement('style');
+particleStyle.textContent = `
+    @keyframes particleFloat {
+        0% {
+            transform: translateY(0) scale(0);
+            opacity: 0;
+        }
+        20% {
+            transform: translateY(-20px) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-60px) scale(0);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(particleStyle);
