@@ -127,6 +127,9 @@
   --border-radius-sm: 12px;
   --border-radius-xs: 8px;
   --transition: all 0.4s var(--fast-start-easing);
+
+  /* Gradient definitions */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-purple) 100%);
 }
 
 * {
