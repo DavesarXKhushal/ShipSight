@@ -1801,16 +1801,80 @@ p {
   font-weight: 400;
 }
 
-/* Animated Marketplace Grid */
+/* Animated Marketplace Grid with Particle Effects */
 .marketplace-animation-container {
   position: relative;
   min-height: 500px;
   margin: 4rem 0;
   overflow: hidden;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(79, 70, 229, 0.03) 100%);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(79, 70, 229, 0.05) 100%);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 40px rgba(79, 70, 229, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.marketplace-animation-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, rgba(79, 70, 229, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 30% 80%, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px, 70px 70px, 90px 90px, 110px 110px;
+  animation: particleFloat 20s linear infinite;
+  pointer-events: none;
+}
+
+.marketplace-animation-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(139, 92, 246, 0.03) 50%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: lightSweep 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0% {
+    background-position: 0px 0px, 10px 10px, 20px 20px, 30px 30px;
+    opacity: 0.3;
+  }
+  50% {
+    background-position: 50px 50px, 60px 60px, 70px 70px, 80px 80px;
+    opacity: 0.6;
+  }
+  100% {
+    background-position: 100px 100px, 110px 110px, 120px 120px, 130px 130px;
+    opacity: 0.3;
+  }
+}
+
+@keyframes lightSweep {
+  0%, 100% {
+    background-position: -100% -100%;
+    opacity: 0;
+  }
+  50% {
+    background-position: 100% 100%;
+    opacity: 1;
+  }
 }
 
 .floating-marketplace-grid {
