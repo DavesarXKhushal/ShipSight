@@ -1553,6 +1553,45 @@ p {
   100% { transform: scale(1) translateY(0) rotate(0deg); opacity: 1; }
 }
 
+/* Marketplace specific animations */
+@keyframes marketplaceEntrance {
+  0% {
+    transform: scale(0.5) translateY(50px) rotate(10deg);
+    opacity: 0;
+    filter: blur(5px);
+  }
+  50% {
+    transform: scale(1.1) translateY(-10px) rotate(-2deg);
+    opacity: 0.7;
+    filter: blur(1px);
+  }
+  80% {
+    transform: scale(0.95) translateY(5px) rotate(1deg);
+    opacity: 0.9;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1) translateY(0) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes marketplaceHoverPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.2) rotate(3deg);
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: scale(1.15) rotate(2deg);
+    filter: brightness(1.1);
+  }
+}
+
 .scale-up-animation[data-delay="0.1s"] { transition-delay: 0.1s; }
 .scale-up-animation[data-delay="0.2s"] { transition-delay: 0.2s; }
 .scale-up-animation[data-delay="0.3s"] { transition-delay: 0.3s; }
