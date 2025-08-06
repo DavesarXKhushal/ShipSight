@@ -559,41 +559,71 @@ function initMarketplaceAnimations() {
                 marketplaceBoxes.forEach((box, index) => {
                     setTimeout(() => {
                         box.style.opacity = '1';
-                        box.style.transform = 'scale(1)';
+                        box.style.transform = 'scale(1) translateY(0)';
                         box.classList.add('animate-in');
-                    }, index * 100);
+
+                        // Add dynamic entry animation
+                        box.style.animation = `
+                            marketplaceEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+                            dynamicFloat ${box.style.getPropertyValue('--duration') || '8s'} ease-in-out infinite,
+                            marketplaceShimmer ${parseFloat(box.style.getPropertyValue('--duration') || '8') * 0.7}s ease-in-out infinite,
+                            marketplaceBreathe ${parseFloat(box.style.getPropertyValue('--duration') || '8') * 1.3}s ease-in-out infinite
+                        `;
+                        box.style.animationDelay = `
+                            0s,
+                            ${box.style.getPropertyValue('--delay') || '0s'},
+                            ${box.style.getPropertyValue('--delay') || '0s'},
+                            ${box.style.getPropertyValue('--delay') || '0s'}
+                        `;
+                    }, index * 150);
                 });
 
                 // Add stats animation
                 const stats = document.querySelectorAll('.marketplace-stats .stat-number');
                 stats.forEach((stat, index) => {
                     setTimeout(() => {
-                        animateCounter(stat);
-                    }, 1000 + (index * 200));
+                        animateMarketplaceCounter(stat);
+                    }, 1200 + (index * 300));
                 });
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.2 });
 
     marketplaceObserver.observe(marketplaceSection);
 
-    // Interactive hover effects for marketplace boxes
+    // Enhanced interactive hover effects for marketplace boxes
     marketplaceBoxes.forEach(box => {
         box.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px) scale(1.1)';
-            this.style.zIndex = '20';
+            this.style.transform = 'translateY(-12px) scale(1.15) rotate(2deg)';
+            this.style.zIndex = '30';
+            this.style.boxShadow = `
+                0 25px 50px rgba(79, 70, 229, 0.4),
+                0 15px 30px rgba(139, 92, 246, 0.3),
+                0 0 20px rgba(139, 92, 246, 0.2)
+            `;
+            this.style.borderColor = 'rgba(139, 92, 246, 0.8)';
 
-            // Add subtle shake animation
-            this.style.animation = 'none';
-            setTimeout(() => {
-                this.style.animation = `floatAndShimmer ${this.style.getPropertyValue('--duration')} ease-in-out infinite, shake 0.5s ease-in-out`;
-            }, 10);
+            // Add dynamic pulse effect
+            this.style.animation = 'marketplaceHoverPulse 0.6s ease-out';
         });
 
         box.addEventListener('mouseleave', function() {
             this.style.transform = '';
             this.style.zIndex = '';
-            this.style.animation = `floatAndShimmer ${this.style.getPropertyValue('--duration')} ease-in-out infinite`;
+            this.style.boxShadow = '';
+            this.style.borderColor = '';
+
+            // Resume normal animations
+            this.style.animation = `
+                dynamicFloat ${this.style.getPropertyValue('--duration') || '8s'} ease-in-out infinite,
+                marketplaceShimmer ${parseFloat(this.style.getPropertyValue('--duration') || '8') * 0.7}s ease-in-out infinite,
+                marketplaceBreathe ${parseFloat(this.style.getPropertyValue('--duration') || '8') * 1.3}s ease-in-out infinite
+            `;
+            this.style.animationDelay = `
+                ${this.style.getPropertyValue('--delay') || '0s'},
+                ${this.style.getPropertyValue('--delay') || '0s'},
+                ${this.style.getPropertyValue('--delay') || '0s'}
+            `;
         });
     });
 }
