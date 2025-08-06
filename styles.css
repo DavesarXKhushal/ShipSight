@@ -1827,6 +1827,65 @@ p {
   .logo-name {
     font-size: 0.8rem;
   }
+
+  /* VMS Section Mobile Styles */
+  .vms-guarantee {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .guarantee-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+  }
+
+  .guarantee-icon i {
+    font-size: 1.5rem;
+  }
+
+  .guarantee-text h3 {
+    text-align: center;
+    font-size: var(--fluid-18-20);
+  }
+
+  .guarantee-text p {
+    text-align: center;
+    font-size: var(--fluid-16-18);
+  }
+
+  .vms-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+  }
+
+  .vms-feature-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .vms-feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .vms-feature-icon i {
+    font-size: 1.5rem;
+  }
+
+  .vms-cta-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .vms-intro {
+    font-size: var(--fluid-16-18) !important;
+    margin-bottom: 2rem !important;
+  }
 }
 
 /* Utility classes */
