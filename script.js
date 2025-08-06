@@ -774,3 +774,54 @@ function animateMarketplaceCounter(element) {
         }
     }, 16);
 }
+
+// Create floating particles effect for enhanced interactivity
+function createFloatingParticles(element) {
+    const particleCount = 6;
+    const colors = ['#4f46e5', '#8b5cf6', '#3b82f6', '#6366f1'];
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.8;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: particleFloat 2s ease-out forwards;
+        `;
+
+        element.appendChild(particle);
+
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.remove();
+            }
+        }, 2000);
+    }
+}
+
+// Add particle animation keyframes
+const particleStyle = document.createElement('style');
+particleStyle.textContent = `
+    @keyframes particleFloat {
+        0% {
+            transform: translateY(0) scale(0);
+            opacity: 0;
+        }
+        20% {
+            transform: translateY(-20px) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-60px) scale(0);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(particleStyle);
