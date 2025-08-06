@@ -80,6 +80,7 @@
   --space-xl-2xl: var(--space-2xl);
 
   /* Fluid Typography */
+  --fluid-14-16: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
   --fluid-16-18: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   --fluid-18-20: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
   --fluid-20-24: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
