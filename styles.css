@@ -130,6 +130,20 @@
 
   /* Gradient definitions */
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-purple) 100%);
+
+  /* Contact page specific variables */
+  --contact-hero-bg: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+  --contact-card-bg: rgba(255, 255, 255, 0.06);
+  --contact-border-color: rgba(255, 255, 255, 0.12);
+
+  /* Support page variables */
+  --support-hero-bg: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+
+  /* Features page variables */
+  --feature-hero-bg: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+
+  /* How-to-use page variables */
+  --how-to-hero-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
 }
 
 * {
