@@ -1883,7 +1883,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 .download-card {
@@ -2050,7 +2050,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 .requirement-card {
@@ -2117,7 +2117,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 .install-step {
@@ -2160,7 +2160,7 @@ p {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   max-width: 800px;
-  margin: 3rem auto;
+  margin: 2rem auto;
 }
 
 /* Contact Page Specific Styles */
@@ -2176,8 +2176,8 @@ p {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin: 3rem 0;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 .contact-info {
@@ -2297,7 +2297,7 @@ p {
   background: var(--secondary-bg);
   border-radius: var(--border-radius);
   padding: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
   backdrop-filter: blur(20px);
 }
 
@@ -2516,7 +2516,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 .support-card {
