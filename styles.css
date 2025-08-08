@@ -3509,11 +3509,11 @@ p {
 .footer {
   background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(30, 40, 60, 0.9) 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 5rem 0 2.5rem;
+  padding: 3rem 0 2rem;
   backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .footer::before {
