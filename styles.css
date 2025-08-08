@@ -3530,8 +3530,8 @@ p {
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 4rem;
-  margin-bottom: 3.5rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
   position: relative;
   z-index: 2;
 }
