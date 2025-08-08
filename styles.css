@@ -1843,7 +1843,7 @@ p {
   align-items: center;
   background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
   margin-top: 100px;
-  padding: 4rem 0;
+  padding: 2rem 0;
   position: relative;
 }
 
@@ -1890,7 +1890,7 @@ p {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
-  padding: 2.5rem;
+  padding: 2rem;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -2035,10 +2035,10 @@ p {
 
 /* Utility classes */
 .text-center { text-align: center; }
-.mb-3 { margin-bottom: 3rem; }
-.mb-4 { margin-bottom: 4rem; }
-.mt-3 { margin-top: 3rem; }
-.mt-4 { margin-top: 4rem; }
+.mb-3 { margin-bottom: 2rem; }
+.mb-4 { margin-bottom: 2.5rem; }
+.mt-3 { margin-top: 2rem; }
+.mt-4 { margin-top: 2.5rem; }
 
 /* Requirements and installation sections */
 .requirements-section {
