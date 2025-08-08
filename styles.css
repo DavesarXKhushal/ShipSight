@@ -645,7 +645,7 @@ p {
 }
 
 .section {
-  padding: 8rem 0;
+  padding: 4rem 0;
   position: relative;
 }
 
@@ -722,7 +722,7 @@ p {
 .hero-buttons {
   display: flex;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -730,7 +730,7 @@ p {
 .hero-stats {
   display: flex;
   gap: 3rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -755,7 +755,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .hero-card {
@@ -814,7 +814,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .feature-card {
@@ -912,7 +912,7 @@ p {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 
@@ -952,7 +952,7 @@ p {
 /* Enhanced VMS Section with Dynamic Animations */
 .vms-section {
   position: relative;
-  padding: 8rem 0;
+  padding: 4rem 0;
   background: linear-gradient(
     135deg,
     rgba(10, 10, 10, 0.98) 0%,
@@ -1059,7 +1059,7 @@ p {
 /* VMS Header Styling */
 .vms-header {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   position: relative;
 }
 
@@ -1162,7 +1162,7 @@ p {
 
 /* Platform Guarantee Section */
 .vms-platform-guarantee {
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 
 .platform-guarantee-container {
@@ -1343,7 +1343,7 @@ p {
 
 /* VMS Benefits Grid - Single Row Layout */
 .vms-benefits-wrapper {
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   padding: 0 1rem;
 }
 
