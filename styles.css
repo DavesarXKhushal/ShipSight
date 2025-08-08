@@ -3456,8 +3456,8 @@ p {
   background: var(--gradient-section);
   text-align: center;
   backdrop-filter: blur(20px);
-  padding: 8rem 0;
-  margin: 4rem 0;
+  padding: 4rem 0;
+  margin: 2rem 0;
   position: relative;
   border-top: 1px solid rgba(139, 92, 246, 0.2);
   border-bottom: 1px solid rgba(139, 92, 246, 0.2);
@@ -4430,7 +4430,7 @@ p {
 }
 
 .requirement-card li::before {
-  content: '•';
+  content: '��';
   color: var(--color-accent);
   position: absolute;
   left: 0;
